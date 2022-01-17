@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import AuthForm from '../../components/Auth/AuthForm';
 import { signInUser, signUpUser } from '../../services/users';
 import classnames from 'classnames';
+import AuthReg from '../../components/Auth/AuthReg';
 
 export default function Auth({ setCurrentUser }) {
   const [type, setType] = useState('Sign In');
@@ -55,21 +56,31 @@ export default function Auth({ setCurrentUser }) {
         </h1>
       </div>
       <p> {type} </p>
-
-      <AuthForm
-        email={email}
-        setEmail={setEmail}
-        password={password}
-        setPassword={setPassword}
-        handleSubmit={handleSubmit}
-        errorMessage={errorMessage}
-        // slackUser={slackUser}
-        // setSlack={setSlack}
-        // linkedinUrl={linkedinUrl}
-        // setLinkedinUrl={setLinkedinUrl}
-        // usersName={usersName}
-        // setUsersName={setUsersName}
-      />
+      {type === 'Sign In' ? (
+        <AuthForm
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          handleSubmit={handleSubmit}
+          errorMessage={errorMessage}
+        />
+      ) : (
+        <AuthReg
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          handleSubmit={handleSubmit}
+          errorMessage={errorMessage}
+          slackUser={slackUser}
+          setSlack={setSlack}
+          linkedinUrl={linkedinUrl}
+          setLinkedinUrl={setLinkedinUrl}
+          usersName={usersName}
+          setUsersName={setUsersName}
+        />
+      )}
     </div>
   );
 }
