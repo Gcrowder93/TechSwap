@@ -10,6 +10,7 @@ import ProductDetails from './views/Product/ProductDetails';
 // import EditProduct from './views/Product/EditProduct';
 // import EditUser from './views/User/EditUser';
 import AboutUs from './components/AboutUs/AboutUs';
+import Footer from './views/Footer/Footer';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(getUser());
@@ -64,6 +65,7 @@ function App() {
           </Route> */}
         </Switch>
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }
