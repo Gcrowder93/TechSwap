@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AuthForm from '../../components/Auth/AuthForm';
-import { signInUser, signUpUser } from '../../services/users';
+import { signInUser, signUpUser, signUpUserDetails } from '../../services/users';
 import classnames from 'classnames';
 import AuthReg from '../../components/Auth/AuthReg';
 
@@ -19,16 +19,8 @@ export default function Auth({ setCurrentUser }) {
       if (type === 'Sign In') {
         resp = await signInUser(email, password);
       } else {
-        resp = await signUpUser(
-          email,
-          password,
-          slackUser,
-          setSlack,
-          linkedinUrl,
-          setLinkedinUrl,
-          usersName,
-          setUsersName
-        );
+        resp = await signUpUser(email, password);
+        await signUpUserDetails(email, password, slackUser, linkedinUrl, usersName);
       }
       setCurrentUser(resp);
     } catch {
