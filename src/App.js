@@ -2,7 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { logout, getUser } from './services/users';
-import AuthForm from './components/Auth/AuthForm';
+import Auth from './views/Auth/Auth';
 import ProductsCard from './components/Products/ProductsCard';
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
                 <button onClick={logoutUser}>Log Out</button>
               </>
             )}
-            {!currentUser && <AuthForm setCurrentUser={setCurrentUser} />}
+            {!currentUser && <Auth setCurrentUser={setCurrentUser} />}
           </Route>
         </Switch>
       </BrowserRouter>
