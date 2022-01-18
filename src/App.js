@@ -27,6 +27,7 @@ function App() {
   return (
     <div className="App">
       <div className="background">
+        <button onClick={logoutUser}>Log Out</button>
         <BrowserRouter>
           {/* HOME page */}
           <Switch>
@@ -40,7 +41,6 @@ function App() {
               {currentUser && (
                 <>
                   <Redirect to="/" />
-                  <button onClick={logoutUser}>Log Out</button>
                 </>
               )}
               {!currentUser && <Auth setCurrentUser={setCurrentUser} />}
