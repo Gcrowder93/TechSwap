@@ -13,6 +13,7 @@ import ProductDetails from './views/Product/ProductDetails';
 import AboutUs from './components/AboutUs/AboutUs';
 import Footer from './views/Footer/Footer';
 import Categories from './views/Product/Categories';
+import Header from './views/Header/Header';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(getUser());
@@ -75,6 +76,7 @@ function App() {
             </Route>
           </Switch>
         </BrowserRouter>
+        <Header />
         <Footer />
       </div>
     </div>

@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 export default function AboutUs() {
   return (
     <div>
+      <br></br>
+      <br></br>
       <h1>About Us</h1>
       <Link href="https://www.linkedin.com/in/brett-seifried/" target="_blank">
         Brett

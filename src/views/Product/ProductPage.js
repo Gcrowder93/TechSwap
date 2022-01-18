@@ -16,6 +16,8 @@ export default function ProductPage() {
 
   return (
     <div>
+      <br></br>
+      <header>.</header>
       <h1> Product landing page/Home</h1>
       <h2>Displays all products, footer, header</h2>
       <ProductsCard products={products} />
