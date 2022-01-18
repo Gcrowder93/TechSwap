@@ -13,3 +13,22 @@ body {
   background-repeat: no-repeat;
   height: 100vh;
 }
+
+.logo {
+  width: 90px;
+}
+
+.profilepic {
+  height: 30px;
+  width: 35px;
+}
+
+.homelogo {
+  height: 30px;
+  width: 35px;
+}
+
+.addlogo {
+  height: 30px;
+  width: 35px;
+}

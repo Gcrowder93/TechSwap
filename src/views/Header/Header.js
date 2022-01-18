@@ -18,7 +18,7 @@ const Header = () => {
           </Column>
           <Column>
             <Heading>
-              <HeaderLink href="/User">Profile</HeaderLink>
+              <HeaderLink href="#">Profile</HeaderLink>
             </Heading>
           </Column>
           <Column>
