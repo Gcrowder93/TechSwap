@@ -10,28 +10,42 @@ import { Box, Container, Row, Column, FooterLink, Heading } from './FooterStyles
 const Footer = () => {
   return (
     <Box>
-      <h1 style={{ color: 'green', textAlign: 'center', marginTop: '-50px' }}>
+      <h2 style={{ color: 'royalBlue', textAlign: 'center', marginTop: '-50px' }}>
         Alchemy Code Lab - Tech Swap
-      </h1>
+      </h2>
       <Container>
         <Row>
-          <Column>
+          {/* <Column>
             <Heading>About Us</Heading>
             <FooterLink href="#">1</FooterLink>
             <FooterLink href="#">2</FooterLink>
-          </Column>
+            <FooterLink href="#">3</FooterLink>
+          </Column> */}
           <Column>
             <Heading>Services</Heading>
-            <FooterLink href="#">1</FooterLink>
-            <FooterLink href="#">2</FooterLink>
-            <FooterLink href="#">3</FooterLink>
+            <FooterLink href="#">Shopping Cart</FooterLink>
+            <FooterLink href="#">Profile Page</FooterLink>
+            <FooterLink href="#">Categories</FooterLink>
+            <FooterLink href="./aboutus">About Us</FooterLink>
           </Column>
           <Column>
             <Heading>Contact Us</Heading>
-            <FooterLink href="#">Brett</FooterLink>
-            <FooterLink href="#">James</FooterLink>
-            <FooterLink href="#">Mark</FooterLink>
-            <FooterLink href="#">Chase</FooterLink>
+            <FooterLink href="https://www.linkedin.com/in/brett-seifried/" target="_blank">
+              Brett
+            </FooterLink>
+            <FooterLink href="https://www.linkedin.com/in/james-demiraiakian/" target="_blank">
+              James
+            </FooterLink>
+
+            <FooterLink href="https://www.linkedin.com/in/mark-voltaire-4907091bb/" target="_blank">
+              Mark
+            </FooterLink>
+            <FooterLink href="https://www.linkedin.com/in/gregory-crowder/" target="_blank">
+              Chase
+            </FooterLink>
+            <FooterLink href="https://www.linkedin.com/in/phoenix-nicholson/" target="_blank">
+              Phoenix
+            </FooterLink>
           </Column>
           <Column>
             <Heading>Social Media</Heading>
