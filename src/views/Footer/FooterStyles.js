@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const Box = styled.div`
-  padding: 80px 60px;
+  padding: 50px 0px;
   background: black;
   position: absolute;
-  bottom: 0;
+  bottom: -22px;
   width: 100%;
-  height: 100px;
+  height: 20px;
   @media (max-width: 1000px) {
-    padding: 70px 30px;
+    padding: 50px 80px;
   }
 `;
 
@@ -24,14 +24,15 @@ export const Container = styled.div`
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
-  text-align: left;
-  margin-left: 60px;
+  text-align: center;
+  // margin-left: 30px;
 `;
 
 export const Row = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
-  grid-gap: 20px;
+  grid-gap: 30px;
+  margin-left: 165px;
 
   @media (max-width: 1000px) {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -40,12 +41,12 @@ export const Row = styled.div`
 
 export const FooterLink = styled.a`
   color: #fff;
-  margin-bottom: 20px;
+  margin-bottom: 7px;
   font-size: 18px;
   text-decoration: none;
 
   &:hover {
-    color: green;
+    color: royalBlue;
     transition: 200ms ease-in;
   }
 `;
@@ -53,6 +54,7 @@ export const FooterLink = styled.a`
 export const Heading = styled.p`
   font-size: 24px;
   color: #fff;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
+  margin-top: -15px;
   font-weight: bold;
 `;
