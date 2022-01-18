@@ -1,9 +1,37 @@
 import React from 'react';
+import { Box, Container, Row, Column, HeaderLink, Heading } from './HeaderStyles';
 
-export default function Header() {
+const Header = () => {
   return (
-    <div>
-      <h1>asdasdasd</h1>
-    </div>
+    <Box>
+      <Container>
+        <Row>
+          <Column>
+            <Heading>
+              <HeaderLink href="/">Home</HeaderLink>
+            </Heading>
+          </Column>
+          <Column>
+            <Heading>
+              <HeaderLink href="/AboutUs">About Us</HeaderLink>
+            </Heading>
+          </Column>
+          <Column>
+            <Heading>
+              <HeaderLink href="/User">Profile</HeaderLink>
+            </Heading>
+          </Column>
+          <Column>
+            {' '}
+            <Heading>
+              {/* <HeaderLink href="#">Search</HeaderLink> */}
+              <input placeholder="Search"></input>
+              <button className="searchbtn">Search</button>
+            </Heading>
+          </Column>
+        </Row>
+      </Container>
+    </Box>
   );
-}
+};
+export default Header;
