@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import { useState } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { logout, getUser } from './services/users';
 import Auth from './views/Auth/Auth';
 import ProductsCard from './components/Products/ProductsCard';
@@ -39,7 +39,7 @@ function App() {
             <Route exact path="/sign-in">
               {currentUser && (
                 <>
-                  <ProductsCard />
+                  <Redirect to="/" />
                   <button onClick={logoutUser}>Log Out</button>
                 </>
               )}
