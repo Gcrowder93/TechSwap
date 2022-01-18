@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default function Users() {
+export default function EditUserComp() {
   return <div></div>;
 }

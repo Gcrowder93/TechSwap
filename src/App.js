@@ -62,7 +62,7 @@ function App() {
 
             {/* View Profile/ Edit own Profile */}
             {/* <ProtectedRoute exact path="/profile/:id" currentuser={currentUser}>
-            <EditUser user={currentUser} />
+            <EditUserView user={currentUser} />
           </ProtectedRoute> */}
 
             {/* About Us */}
