@@ -39,17 +39,21 @@ const Footer = () => {
           </Column>
           <Column>
             <Heading>
-              <FooterLink href="/AboutUs">About Us</FooterLink>
+              <FooterLink href="/aboutus">About Us</FooterLink>
             </Heading>
           </Column>
           <Column>
             <Heading>
+<<<<<<< HEAD
               <FooterLink href="#">
                 <img
                   src="https://icon-library.com/images/profile-icon-white/profile-icon-white-1.jpg"
                   className="profilepic"
                 ></img>
               </FooterLink>
+=======
+              <FooterLink href="/user">Profile</FooterLink>
+>>>>>>> a25cb047e78184b93f48a3143742516416490677
             </Heading>
           </Column>
         </Row>

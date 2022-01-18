@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import { useState } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { logout, getUser } from './services/users';
 import Auth from './views/Auth/Auth';
 import ProductsCard from './components/Products/ProductsCard';
@@ -27,6 +27,7 @@ function App() {
   return (
     <div className="App">
       <div className="background">
+        <button onClick={logoutUser}>Log Out</button>
         <BrowserRouter>
           {/* HOME page */}
           <Switch>
@@ -39,8 +40,7 @@ function App() {
             <Route exact path="/sign-in">
               {currentUser && (
                 <>
-                  <ProductsCard />
-                  <button onClick={logoutUser}>Log Out</button>
+                  <Redirect to="/" />
                 </>
               )}
               {!currentUser && <Auth setCurrentUser={setCurrentUser} />}
