@@ -29,6 +29,8 @@ export default function Auth({ setCurrentUser }) {
   };
   return (
     <div className="Link">
+      <br></br>
+      <br></br>
       <div classnames="Link">
         <h1
           onClick={() => {
