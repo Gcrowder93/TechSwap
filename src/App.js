@@ -51,8 +51,8 @@ function App() {
 
             {/* Add Page */}
             {/* <ProtectedRoute exact path="/add" currentUser={currentUser}>
-            <AddProduct user={currentUser} />
-          </ProtectedRoute> */}
+              <AddProduct user={currentUser} />
+            </ProtectedRoute> */}
 
             {/* Edit Product */}
             {/* <ProtectedRoute exact path="/add/:id" currentUser={currentUser}>

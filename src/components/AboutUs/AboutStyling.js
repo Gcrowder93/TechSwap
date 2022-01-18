@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const Box = styled.div`
-  padding: 20px 5px;
+  padding: 50px 0px;
   background: black;
   position: absolute;
-  bottom: -32px;
+  bottom: -22px;
   width: 100%;
-  height: 10px;
+  height: 20px;
   @media (max-width: 1000px) {
     padding: 50px 80px;
   }
@@ -31,8 +31,8 @@ export const Column = styled.div`
 export const Row = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
-  // grid-gap: 5px;
-  // margin-left: 25px;
+  grid-gap: 30px;
+  margin-left: 165px;
 
   @media (max-width: 1000px) {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -41,7 +41,7 @@ export const Row = styled.div`
 
 export const FooterLink = styled.a`
   color: #fff;
-  margin-bottom: 2px;
+  margin-bottom: 7px;
   font-size: 18px;
   text-decoration: none;
 
@@ -54,7 +54,7 @@ export const FooterLink = styled.a`
 export const Heading = styled.p`
   font-size: 24px;
   color: #fff;
-  margin-bottom: 5px;
-  margin-top: -10px;
+  margin-bottom: 10px;
+  margin-top: -15px;
   font-weight: bold;
 `;
