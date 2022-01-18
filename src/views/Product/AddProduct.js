@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import ProductForm from '../../components/Products/ProductForm';
 import { createProduct } from '../../services/products';
 
 export default function AddProduct() {
@@ -27,6 +28,8 @@ export default function AddProduct() {
         return setCatagories(target.catagories);
       case 'condition':
         return setCondition(target.condition);
+      default:
+        return false;
     }
   };
 
@@ -43,8 +46,19 @@ export default function AddProduct() {
 
   return (
     <div>
+      <Link></Link>
       <h1>Add Product page</h1>
-      <p>Title, Descrip, Image, PRice, Location, Category</p>
+      <p>{alert}</p>
+      <ProductForm
+        title={title}
+        description={description}
+        price={price}
+        image={image}
+        catagories={catagories}
+        condition={condition}
+        onChange={onChange}
+        onSubmit={onSubmit}
+      />
     </div>
   );
 }
