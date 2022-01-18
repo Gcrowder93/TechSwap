@@ -12,6 +12,7 @@ import ProductDetails from './views/Product/ProductDetails';
 // import EditUser from './views/User/EditUser';
 import AboutUs from './components/AboutUs/AboutUs';
 import Footer from './views/Footer/Footer';
+import Categories from './views/Product/Categories';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(getUser());
@@ -25,13 +26,15 @@ function App() {
     <div className="App">
       <div className="background">
         <BrowserRouter>
+          {/* HOME page */}
           <Switch>
             <Route
               exact
               path="/"
               render={(routeProps) => <ProductPage {...routeProps} user={currentUser} />}
             ></Route>
-            <Route exact path="/auth">
+            {/* SIGN IN/SIGN UP */}
+            <Route exact path="/sign-in">
               {currentUser && (
                 <>
                   <ProductsCard />
@@ -40,31 +43,36 @@ function App() {
               )}
               {!currentUser && <Auth setCurrentUser={setCurrentUser} />}
             </Route>
+
+            {/* View Product */}
             <Route exact path="/product/:id">
               <ProductDetails user={currentUser} />
             </Route>
 
+            {/* Add Page */}
             {/* <ProtectedRoute exact path="/add" currentUser={currentUser}>
-            <AddProduct user={currentUser} />
-          </ProtectedRoute> */}
+              <AddProduct user={currentUser} />
+            </ProtectedRoute> */}
 
+            {/* Edit Product */}
             {/* <ProtectedRoute exact path="/add/:id" currentUser={currentUser}>
             <EditProduct user={currentUser} />
           </ProtectedRoute> */}
 
-            {/* Protected or not */}
+            {/* View Profile/ Edit own Profile */}
             {/* <ProtectedRoute exact path="/profile/:id" currentuser={currentUser}>
             <EditUser user={currentUser} />
           </ProtectedRoute> */}
 
+            {/* About Us */}
             <Route exact path="/aboutus">
               <AboutUs />
             </Route>
 
-            {/* Need to create Categories views
-          <Route exactpath="/categories">
-            <Categories />
-          </Route> */}
+            {/* Need to create Categories views */}
+            <Route exact path="/categories">
+              <Categories />
+            </Route>
           </Switch>
         </BrowserRouter>
         <Footer />

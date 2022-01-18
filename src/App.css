@@ -1,14 +1,14 @@
 body {
   /* color: gray; */
-  background-color: black;
+  /* background-color: black; */
   text-align: center;
   height: 100%;
 }
 
 .background {
-  /* background-image: url('./techbackground.jpeg'); */
+  background-image: url('./techbackground.jpeg');
   background-image: url('./techbg2.png');
-  /* background-position: center; */
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
