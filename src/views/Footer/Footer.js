@@ -18,7 +18,7 @@ const Footer = () => {
           </Column>
           <Column>
             <Heading>
-              <FooterLink href="/AddProduct">Add Product</FooterLink>
+              <FooterLink href="/add">Add Product</FooterLink>
             </Heading>
           </Column>
           <Column>
