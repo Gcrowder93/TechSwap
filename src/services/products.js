@@ -1,4 +1,7 @@
-import { checkError, client } from './client';
+import { client, checkError } from './client';
+
+export async function fetchProducts() {
+  const resp = await client.from('products').select('*');
 
 export async function createProduct(item) {
   const resp = await client.from('products').insert({
