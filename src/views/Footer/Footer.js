@@ -50,7 +50,7 @@ const Footer = () => {
                   className="profilepic"
                 ></img>
               </FooterLink>
-              <FooterLink href="/user">Profile</FooterLink>
+              <FooterLink href="#"></FooterLink>
             </Heading>
           </Column>
         </Row>
