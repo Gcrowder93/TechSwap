@@ -15,6 +15,7 @@ import Footer from './views/Footer/Footer';
 import Categories from './views/Product/Categories';
 import Header from './views/Header/Header';
 import ProtectedRoute from './utils/ProtectedRoute';
+import EditProduct from './views/Product/EditProduct';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(getUser());
@@ -57,9 +58,9 @@ function App() {
             </ProtectedRoute>
 
             {/* Edit Product */}
-            {/* <ProtectedRoute exact path="/add/:id" currentUser={currentUser}>
-            <EditProduct user={currentUser} />
-          </ProtectedRoute> */}
+            <ProtectedRoute exact path="/add/:id" currentUser={currentUser}>
+              <EditProduct user={currentUser} />
+            </ProtectedRoute>
 
             {/* View Profile/ Edit own Profile */}
             {/* <ProtectedRoute exact path="/profile/:id" currentuser={currentUser}>
