@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../../App.css';
 import { Box, Container, Row, Column, HeaderLink, Heading } from './HeaderStyles';
-import { getUser, logout } from '../../services/users';
+import { getUser, getUserById, logout } from '../../services/users';
 import { useState } from 'react';
 
 const Header = () => {
   const [currentUser, setCurrentUser] = useState(getUser());
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const resp = await getUserById(currentUser.user.id);
+      setUser(resp);
+    };
+    fetchData();
+  }, [currentUser]);
+
   const logoutUser = async () => {
     await logout();
     setCurrentUser(null);
@@ -34,7 +44,7 @@ const Header = () => {
           </Column>
           <Column>
             <Heading>
-              <HeaderLink href="/UserView">
+              <HeaderLink href={`/profile/${user.id}`}>
                 <img
                   src="https://icon-library.com/images/profile-icon-white/profile-icon-white-1.jpg"
                   className="profilepic"
