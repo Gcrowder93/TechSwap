@@ -4,7 +4,7 @@ export const Box = styled.div`
   padding: 20px 5px;
   background: black;
   position: absolute;
-  bottom: -32px;
+  // bottom: -32px;
   width: 100%;
   height: 10px;
   @media (max-width: 1000px) {
@@ -16,7 +16,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 1000px;
+  max-width: 1000%;
   margin: 0 auto;
   /* background: red; */
 `;
@@ -25,14 +25,14 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  // margin-left: 30px;
+  margin-left: 100px;
 `;
 
 export const Row = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
-  // grid-gap: 5px;
-  // margin-left: 25px;
+  grid-gap: 10px;
+  margin-left: 100px;
 
   @media (max-width: 1000px) {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

@@ -16,3 +16,8 @@ export async function createProduct(item) {
   });
   return checkError(resp);
 }
+
+export async function getProductById(id) {
+  const resp = await client.from('products').select('*').match({ id }).single();
+  return checkError(resp);
+}

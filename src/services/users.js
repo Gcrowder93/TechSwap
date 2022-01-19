@@ -4,6 +4,11 @@ export function getUser() {
   return client.auth.session();
 }
 
+export async function getUserById(id) {
+  const resp = await client.from('users').select('*').match({ id }).single();
+  return checkError(resp);
+}
+
 export async function signUpUser(email, password) {
   const { user, error } = await client.auth.signUp({ email, password });
   if (error) {
@@ -22,6 +27,17 @@ export async function signUpUserDetails(email, password, usersName, slackUser, l
       linkedin_url: linkedinUrl,
     },
   ]);
+  if (error) {
+    throw error;
+  }
+  return userDetail;
+}
+
+export async function editUserDetails(id, { userName, slackUser, linkedinUrl }) {
+  const { userDetail, error } = await client
+    .from('users')
+    .update({ userName, slackUser, linkedinUrl })
+    .match({ id });
   if (error) {
     throw error;
   }
