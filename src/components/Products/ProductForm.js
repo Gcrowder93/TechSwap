@@ -38,7 +38,7 @@ export default function ProductForm({
       <input
         id="price"
         name="price"
-        type="text"
+        type="number"
         value={price}
         onChange={(e) => {
           updateProductState('price', e.target.value);
