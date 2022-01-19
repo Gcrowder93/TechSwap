@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { editUserDetails, getUserById } from '../../services/users';
 import EditUserComp from '../../components/Users/EditUserComp';
 
-export default function EditUser() {
+export default function EditUserView() {
   const [input, setInput] = useState({ userName: '', slackUser: '', linkedinUrl: '' });
   const [user, setUser] = useState({ userName: '', slackUser: '', linkedinUrl: '' });
   const [alert, setAlert] = useState('');
@@ -36,7 +36,7 @@ export default function EditUser() {
         slackUser: input.slackUser,
         linkedinUrl: input.linkedinUrl,
       });
-      history.push('/'); // change the pathing on this line to take you to the product details page
+      history.push(`/profile/${resp[0].id}`);
     } catch (e) {
       setAlert(e.message ? e.message : 'WRONG');
     }
@@ -46,7 +46,14 @@ export default function EditUser() {
     <div>
       <div>Edit</div>
       <p>{alert}</p>
-      <EditUserComp />
+      <EditUserComp
+        label="Edit User Info"
+        userName={input.userName}
+        slackUser={input.slackUser}
+        linkedinUrl={input.linkedinUrl}
+        onChange={onChange}
+        onSubmit={onSubmit}
+      />
     </div>
   );
 }

@@ -15,6 +15,7 @@ import Footer from './views/Footer/Footer';
 import Categories from './views/Product/Categories';
 import Header from './views/Header/Header';
 import ProtectedRoute from './utils/ProtectedRoute';
+import EditUserView from './views/User/EditUserView';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(getUser());
@@ -62,9 +63,9 @@ function App() {
           </ProtectedRoute> */}
 
             {/* View Profile/ Edit own Profile */}
-            {/* <ProtectedRoute exact path="/profile/:id" currentuser={currentUser}>
-            <EditUserView user={currentUser} />
-          </ProtectedRoute> */}
+            <ProtectedRoute exact path="/profile" currentuser={currentUser}>
+              <EditUserView user={currentUser} />
+            </ProtectedRoute>
 
             {/* About Us */}
             <Route exact path="/aboutus">
