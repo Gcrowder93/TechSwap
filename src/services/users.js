@@ -4,6 +4,11 @@ export function getUser() {
   return client.auth.session();
 }
 
+export async function fetchUsers() {
+  const resp = await client.from('users').select('*');
+  return checkError(resp);
+}
+
 export async function signUpUser(email, password) {
   const { user, error } = await client.auth.signUp({ email, password });
   if (error) {

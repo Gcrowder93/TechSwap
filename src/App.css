@@ -31,3 +31,18 @@ body {
   height: 30px;
   width: 35px;
 }
+
+.searchbar {
+  width: 90px;
+  border-radius: 15%;
+}
+
+.searchbtn {
+  width: 37px;
+  border-radius: 15%;
+}
+
+.logoutbtn {
+  width: 65px;
+  border-radius: 15%;
+}
