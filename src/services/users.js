@@ -4,10 +4,8 @@ export function getUser() {
   return client.auth.session();
 }
 
-export async function getUserById(id) {
-  const resp = await client.from('users').select('*').match({ id }).single();
-  // const resp2 = await client.auth.session('users').select('*, users(*)').match({ id }).single();
-  // const resp = { ...resp1, ...resp2 };
+export async function getUserById(user_id) {
+  const resp = await client.from('users').select('*').match({ user_id }).single();
   return checkError(resp);
 }
 
@@ -27,7 +25,7 @@ export async function signUpUser(email, password) {
 export async function signUpUserDetails(user_id, email, usersName, slackUser, linkedinUrl) {
   const { userDetail, error } = await client.from('users').insert([
     {
-      user_id: client.auth.users.id,
+      user_id: user_id,
       email: email,
       name: usersName,
       slack_id: slackUser,
