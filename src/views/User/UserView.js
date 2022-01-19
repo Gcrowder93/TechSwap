@@ -8,7 +8,6 @@ export default function UserView({ currentUser }) {
   useEffect(() => {
     const fetchData = async () => {
       const resp = await getUserById(currentUser.user.id);
-      console.log(resp);
       setUser(resp);
       setLoading(false);
     };
@@ -21,6 +20,7 @@ export default function UserView({ currentUser }) {
       <div>User Profile View</div>
       <br></br>
       <div>{user.name}</div>
+      <button to={`/profile/${user.id}/edit`}>Edit</button>
     </>
   );
 }
