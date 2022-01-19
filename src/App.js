@@ -48,7 +48,7 @@ function App() {
               {!currentUser && <Auth setCurrentUser={setCurrentUser} />}
             </Route>
             {/* View Product */}
-            <Route exact path="/product/:id">
+            <Route exact path="/products/:id">
               <ProductDetails user={currentUser} />
             </Route>
             {/* Add Page */}
