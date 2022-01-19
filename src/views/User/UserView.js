@@ -7,7 +7,6 @@ export default function UserView({ currentUser }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log(currentUser.user.id);
       const resp = await getUserById(currentUser.user.id);
       console.log(resp);
       setUser(resp);
@@ -21,7 +20,7 @@ export default function UserView({ currentUser }) {
     <>
       <div>User Profile View</div>
       <br></br>
-      <div>{user.userName}</div>
+      <div>{user.name}</div>
     </>
   );
 }
