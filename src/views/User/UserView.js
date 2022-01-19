@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { getUserById } from '../../services/users';
 
-export default function UserView({ id }) {
+export default function UserView({ currentUser }) {
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log(id);
-      const resp = await getUserById(id);
+      const resp = await getUserById(currentUser.user.id);
+      console.log(resp);
       setUser(resp);
       setLoading(false);
     };
     fetchData();
-  }, [id]);
+  }, [currentUser]);
   return loading ? (
     <h1>LOADING</h1>
   ) : (
     <>
-      <div>User Profile View</div>;<div>{user.userName}</div>
+      <div>User Profile View</div>
+      <br></br>
+      <div>{user.name}</div>
     </>
   );
 }
