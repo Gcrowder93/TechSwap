@@ -67,7 +67,7 @@ function App() {
               <EditUserView user={currentUser} />
             </ProtectedRoute>
             <Route exact path="/profile/:id">
-              <UserView />
+              <UserView currentUser={currentUser} />
             </Route>
             {/* About Us */}
             <Route exact path="/aboutus">
