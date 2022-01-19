@@ -33,6 +33,17 @@ export async function signUpUserDetails(email, password, usersName, slackUser, l
   return userDetail;
 }
 
+export async function editUserDetails(id, { userName, slackUser, linkedinUrl }) {
+  const { userDetail, error } = await client
+    .from('users')
+    .update({ userName, slackUser, linkedinUrl })
+    .match({ id });
+  if (error) {
+    throw error;
+  }
+  return userDetail;
+}
+
 export async function signInUser(email, password) {
   const { user, error } = await client.auth.signIn({ email, password });
   if (error) {
