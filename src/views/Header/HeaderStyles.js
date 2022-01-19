@@ -25,15 +25,15 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-left: 30px;
+  margin-left: 10px;
 `;
 
 export const Row = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
-  grid-gap: 5px;
+  grid-gap: 10px;
   margin-left: 15px;
-  margin-right: 75px;
+  margin-right: 15px;
 
   @media (max-width: 1000px) {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

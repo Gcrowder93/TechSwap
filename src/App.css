@@ -13,6 +13,14 @@ body {
   height: 100vh;
 }
 
+.productLinks {
+  color: black;
+  text-decoration: none;
+}
+
+.productImages {
+  max-width: 300px;
+}
 .logo {
   width: 90px;
 }
@@ -30,4 +38,19 @@ body {
 .addlogo {
   height: 30px;
   width: 35px;
+}
+
+.searchbar {
+  width: 90px;
+  border-radius: 15%;
+}
+
+.searchbtn {
+  width: 37px;
+  border-radius: 15%;
+}
+
+.logoutbtn {
+  width: 65px;
+  border-radius: 15%;
 }

@@ -15,7 +15,7 @@ import Footer from './views/Footer/Footer';
 import Categories from './views/Product/Categories';
 import Header from './views/Header/Header';
 import ProtectedRoute from './utils/ProtectedRoute';
-import EditUserView from './views/User/EditUserView';
+import EditUser from './views/User/EditUser';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(getUser());
@@ -46,32 +46,26 @@ function App() {
               )}
               {!currentUser && <Auth setCurrentUser={setCurrentUser} />}
             </Route>
-
             {/* View Product */}
             <Route exact path="/product/:id">
               <ProductDetails user={currentUser} />
             </Route>
-
             {/* Add Page */}
             <ProtectedRoute exact path="/add" currentUser={currentUser}>
               <AddProduct user={currentUser} />
             </ProtectedRoute>
-
             {/* Edit Product */}
             {/* <ProtectedRoute exact path="/add/:id" currentUser={currentUser}>
             <EditProduct user={currentUser} />
           </ProtectedRoute> */}
-
-            {/* View Profile/ Edit own Profile */}
-            <ProtectedRoute exact path="/profile" currentuser={currentUser}>
-              <EditUserView user={currentUser} />
-            </ProtectedRoute>
-
+            View Profile/ Edit own Profile
+            {/* <ProtectedRoute exact path="/profile/:id" currentuser={currentUser}>
+              <EditUser user={currentUser} />
+            </ProtectedRoute> */}
             {/* About Us */}
             <Route exact path="/aboutus">
               <AboutUs />
             </Route>
-
             {/* Need to create Categories views */}
             <Route exact path="/categories">
               <Categories />
@@ -79,6 +73,7 @@ function App() {
           </Switch>
         </BrowserRouter>
         <Header />
+        {/* <EditUser /> */}
         <Footer />
       </div>
     </div>

@@ -4,8 +4,8 @@ export function getUser() {
   return client.auth.session();
 }
 
-export async function getUserById(id) {
-  const resp = await client.from('users').select('*').match({ id }).single();
+export async function fetchUsers() {
+  const resp = await client.from('users').select('*');
   return checkError(resp);
 }
 

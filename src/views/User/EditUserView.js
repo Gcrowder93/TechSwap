@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import { editUserDetails, getUserById } from '../../services/users';
-import EditUserComp from '../../components/Users/EditUserComp';
+import EditUserComp from '../../components/Users/Users';
 
 export default function EditUserView() {
   const [input, setInput] = useState({ userName: '', slackUser: '', linkedinUrl: '' });
