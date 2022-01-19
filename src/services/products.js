@@ -5,15 +5,28 @@ export async function fetchProducts() {
   return checkError(resp);
 }
 
-export async function createProduct(item) {
+// export async function createProduct(item) {
+//   const resp = await client.from('products').insert({
+//     title: item.title,
+//     description: item.description,
+//     price: item.price,
+//     image: item.image,
+//     category: item.category,
+//     condition: item.condition,
+//   });
+//   return checkError(resp);
+// }
+export async function createProduct({ title, description, price, categories, condition, image }) {
   const resp = await client.from('products').insert({
-    title: item.title,
-    description: item.description,
-    price: item.price,
-    image: item.image,
-    category: item.category,
-    condition: item.condition,
+    title: title,
+    description: description,
+    price: price,
+    category: categories,
+    condition: condition,
+    image: image,
   });
+  console.log('category', categories);
+  console.log(resp);
   return checkError(resp);
 }
 

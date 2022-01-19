@@ -7,58 +7,60 @@ import { createProduct } from '../../services/products';
 export default function AddProduct() {
   const [title, setTitle] = useState([]);
   const [description, setDescription] = useState([]);
-  const [price, setPrice] = useState([]);
+  const [price, setPrice] = useState(0);
   const [image, setImage] = useState([]);
   const [categories, setCategories] = useState([]);
   const [condition, setCondition] = useState([]);
   const [alert, setAlert] = useState([]);
   const history = useHistory();
 
-  // const onChange = ({ target }) => {
-  //   switch (target.title) {
-  //     case 'title':
-  //       return setTitle(target.value);
-  //     case 'description':
-  //       return setDescription(target.value);
-  //     case 'price':
-  //       return setPrice(target.value);
-  //     case 'image':
-  //       return setImage(target.value);
-  //     case 'categories':
-  //       return setCategories(target.value);
-  //     case 'condition':
-  //       return setCondition(target.value);
-  //     default:
-  //       return false;
-  //   }
-  // };
-
-  const updateProductState = (key, value) => {
-    title[key] = value;
-    setTitle({ ...title });
-
-    description[key] = value;
-    setDescription({ ...description });
-
-    price[key] = value;
-    setPrice({ ...price });
-
-    image[key] = value;
-    setImage({ ...image });
-
-    categories[key] = value;
-    setCategories({ ...categories });
-
-    condition[key] = value;
-    setCondition({ ...condition });
+  const onChange = ({ target }) => {
+    console.log(target.name);
+    switch (target.name) {
+      case 'title':
+        return setTitle(target.value);
+      case 'description':
+        return setDescription(target.value);
+      case 'price':
+        return setPrice(target.value);
+      case 'image':
+        return setImage(target.value);
+      case 'categories':
+        return setCategories(target.value);
+      case 'condition':
+        return setCondition(target.value);
+      default:
+        return false;
+    }
   };
+
+  // const updateProductState = (key, value) => {
+  //   title[key] = value;
+  //   setTitle({ ...title });
+
+  //   description[key] = value;
+  //   setDescription({ ...description });
+
+  //   price[key] = value;
+  //   setPrice({ ...price });
+
+  //   image[key] = value;
+  //   setImage({ ...image });
+
+  //   categories[key] = value;
+  //   setCategories({ ...categories });
+
+  //   condition[key] = value;
+  //   setCondition({ ...condition });
+  // };
 
   const onSubmit = async (e) => {
     e.preventDefault();
-
+    console.log(categories);
     try {
-      const resp = createProduct({ title, description, price, image, categories, condition });
-      history.push(`/procucts/${resp[0].id}`);
+      const resp = await createProduct({ title, description, price, image, categories, condition });
+      console.log(resp);
+      history.push(`/products/${resp[0].id}`);
     } catch (error) {
       setAlert(error.message);
     }
@@ -77,7 +79,8 @@ export default function AddProduct() {
         {...categories}
         {...condition}
         onSubmit={onSubmit}
-        updateProductState={updateProductState}
+        // updateProductState={updateProductState}
+        onChange={onChange}
       />
     </div>
   );
