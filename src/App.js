@@ -19,6 +19,8 @@ import EditProduct from './views/Product/EditProduct';
 import EditUserView from './views/User/EditUserView';
 import UserView from './views/User/UserView';
 
+// import Autocomplete from './AutoComplete';
+
 function App() {
   const [currentUser, setCurrentUser] = useState(getUser());
 
@@ -31,6 +33,14 @@ function App() {
     <div className="App">
       <div className="background">
         <button onClick={logoutUser}>Log Out</button>
+        <br></br>
+        {/* <br></br>
+        <br></br>
+        <section>
+          <div className="searchbarsearch">
+            <Autocomplete Products={ProductsCard} />
+          </div>
+        </section> */}
         <BrowserRouter>
           {/* HOME page */}
           <Switch>
@@ -63,11 +73,11 @@ function App() {
             </ProtectedRoute>
 
             {/* View Profile/ Edit own Profile */}
-            <ProtectedRoute exact path="/profile/:id/edit" currentuser={currentUser}>
-              <EditUserView user={currentUser} />
+            <ProtectedRoute exact path="/profile/:id/edit" currentUser={currentUser}>
+              <EditUserView exact path="/profile/:id/edit" currentUser={currentUser} />
             </ProtectedRoute>
             <Route exact path="/profile/:id">
-              <UserView path="/profile/:id" currentUser={currentUser} />
+              <UserView exact path="/profile/:id" currentUser={currentUser} />
             </Route>
             {/* About Us */}
             <Route exact path="/aboutus">

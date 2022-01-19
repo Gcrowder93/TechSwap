@@ -1,9 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// import Autocomplete from '../../AutoComplete';
+// import ProductsCard from '../Products/ProductsCard';
+
 export default function AboutUs() {
   return (
     <div>
+      {/* <br></br>
+      <br></br>
+      <section>
+        <div className="searchbarsearch">
+          <Autocomplete Products={ProductsCard} />
+        </div>
+      </section> */}
       <br></br>
       <br></br>
       <h1>About Us</h1>
