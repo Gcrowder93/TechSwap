@@ -8,20 +8,13 @@ export default function ProductForm({
   categories,
   condition,
   onSubmit,
-  updateProductState,
+  onChange,
+  //   updateProductState,
 }) {
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <label>Title:</label>
-      <input
-        id="title"
-        name="title"
-        type="text"
-        value={title}
-        onChange={(e) => {
-          updateProductState('title', e.target.value);
-        }}
-      />
+      <input id="title" name="title" type="text" value={title} onChange={(e) => onChange(e)} />
 
       <label>Description:</label>
       <input
@@ -29,42 +22,22 @@ export default function ProductForm({
         name="description"
         type="text"
         value={description}
-        onChange={(e) => {
-          updateProductState('description', e.target.value);
-        }}
+        onChange={(e) => onChange(e)}
       />
 
       <label>Price:</label>
-      <input
-        id="price"
-        name="price"
-        type="text"
-        value={price}
-        onChange={(e) => {
-          updateProductState('price', e.target.value);
-        }}
-      />
+      <input id="price" name="price" type="number" value={price} onChange={(e) => onChange(e)} />
 
       <label>Image:</label>
-      <input
-        id="image"
-        name="image"
-        type="text"
-        value={image}
-        onChange={(e) => {
-          updateProductState('image', e.target.value);
-        }}
-      />
+      <input id="image" name="image" type="text" value={image} onChange={(e) => onChange(e)} />
 
-      <label>Catagory:</label>
+      <label>Category:</label>
       <input
         id="categories"
         name="categories"
         type="text"
         value={categories}
-        onChange={(e) => {
-          updateProductState('categories', e.target.value);
-        }}
+        onChange={(e) => onChange(e)}
       />
 
       <label>Condition:</label>
@@ -73,9 +46,7 @@ export default function ProductForm({
         name="condition"
         type="text"
         value={condition}
-        onChange={(e) => {
-          updateProductState('condition', e.target.value);
-        }}
+        onChange={(e) => onChange(e)}
       />
 
       <button onClick={onSubmit}>Submit</button>
