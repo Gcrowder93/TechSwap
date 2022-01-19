@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { getUserById } from '../../services/users';
 
 export default function UserView({ currentUser }) {
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
+  // console.log(currentUser);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,7 +22,7 @@ export default function UserView({ currentUser }) {
       <div>User Profile View</div>
       <br></br>
       <div>{user.name}</div>
-      <button to={`/profile/${user.id}/edit`}>Edit</button>
+      <Link to={`/profile/${user.id}/edit`}>Edit</Link>
     </>
   );
 }
