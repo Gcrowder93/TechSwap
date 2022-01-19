@@ -133,6 +133,14 @@ body {
   font-weight: 800;
 }
 
+
+.editButton {
+}
+
+.editProductForm {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 .background {
   /* background-image: url('./techbackground.jpeg'); */
   /* background-image: url('./techbg2.png'); */
@@ -143,4 +151,5 @@ body {
   background-repeat: repeat;
   height: fit-content;
   height: 100vh;
+
 }

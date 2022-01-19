@@ -11,7 +11,7 @@ export default function EditProductComp({
   onSubmit,
 }) {
   return (
-    <div>
+    <div className="editProductForm">
       <form onSubmit={onSubmit}>
         <input
           name="title"
