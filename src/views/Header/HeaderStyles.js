@@ -7,9 +7,9 @@ export const Box = styled.div`
   top: 1px;
   width: 100%;
   height: 10px;
-  @media (max-width: 1000px) {
-    padding: 50px 80px;
-  }
+  // @media (max-width: 1000px) {
+  //   padding: 50px 80px;
+  // }
 `;
 
 export const Container = styled.div`
@@ -35,9 +35,9 @@ export const Row = styled.div`
   margin-left: 15px;
   margin-right: 15px;
 
-  @media (max-width: 1000px) {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
+  // @media (max-width: 1000px) {
+  //   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  // }
 `;
 
 export const HeaderLink = styled.a`

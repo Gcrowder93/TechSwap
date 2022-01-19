@@ -12,7 +12,7 @@ const Header = () => {
   };
   return (
     <Box>
-      <Container>
+      <Container className="cont">
         <Row>
           <Column>
             <Heading>
