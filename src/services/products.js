@@ -21,3 +21,14 @@ export async function getProductById(id) {
   const resp = await client.from('products').select('*').match({ id }).single();
   return checkError(resp);
 }
+
+export async function updateProductById(
+  id,
+  { title, description, price, image, category, condition }
+) {
+  const resp = await client
+    .from('products')
+    .update({ title, description, price, image, category, condition })
+    .match({ id });
+  return checkError(resp);
+}
