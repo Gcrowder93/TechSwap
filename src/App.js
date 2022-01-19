@@ -73,11 +73,11 @@ function App() {
             </ProtectedRoute>
 
             {/* View Profile/ Edit own Profile */}
-            <ProtectedRoute exact path="/profile/:id/edit" currentuser={currentUser}>
-              <EditUserView user={currentUser} />
+            <ProtectedRoute exact path="/profile/:id/edit" currentUser={currentUser}>
+              <EditUserView exact path="/profile/:id/edit" currentUser={currentUser} />
             </ProtectedRoute>
             <Route exact path="/profile/:id">
-              <UserView currentUser={currentUser} />
+              <UserView exact path="/profile/:id" currentUser={currentUser} />
             </Route>
             {/* About Us */}
             <Route exact path="/aboutus">

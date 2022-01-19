@@ -10,6 +10,7 @@ export default function EditUserComp({
 }) {
   return (
     <div>
+      <div>EDIT</div>
       <div>{label || 'User Info'}</div>
       <form onSubmit={onSubmit}>
         <label htmlFor="userName">Name: </label>
