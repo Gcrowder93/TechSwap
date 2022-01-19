@@ -4,14 +4,6 @@ import { getProductById, updateProductById } from '../../services/products';
 import EditProductComp from '../../components/Products/EditProductComp';
 
 export default function EditProduct() {
-  // const [input, setInput] = useState({
-  //   title: '',
-  //   description: '',
-  //   price: '',
-  //   image: '',
-  //   category: '',
-  //   condition: '',
-  // });
   const [product, setProduct] = useState({
     title: '',
     description: '',
@@ -23,10 +15,6 @@ export default function EditProduct() {
   const history = useHistory();
   const [alert, setAlert] = useState('');
   const { id } = useParams();
-
-  // useEffect(() => {
-  //   setInput(product);
-  // }, [product]);
 
   useEffect(() => {
     const fetchData = async () => {
