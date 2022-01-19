@@ -44,7 +44,7 @@ const Footer = () => {
           </Column>
           <Column>
             <Heading>
-              <FooterLink href="/EditUser">
+              <FooterLink href="/UserView">
                 <img
                   src="https://icon-library.com/images/profile-icon-white/profile-icon-white-1.jpg"
                   className="profilepic"
