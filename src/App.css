@@ -22,8 +22,9 @@ body {
   text-decoration: none;
 }
 
-.productImages {
+.productImage {
   max-width: 300px;
+  border-radius: 15px;
 }
 .logo {
   width: 90px;
@@ -57,4 +58,71 @@ body {
 .logoutbtn {
   width: 65px;
   border-radius: 15%;
+}
+
+.productLists {
+  padding-top: 40px;
+}
+
+.productLinks {
+  color: white;
+}
+
+.productTitle {
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.productPrice {
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.productCondition {
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.productDetailCondition {
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 800;
+  color: white;
+}
+
+.productDetailImage {
+  max-width: 300px;
+  border-radius: 15px;
+}
+
+.productDetailTitle {
+  color: white;
+}
+
+.productDetailDescription {
+  color: white;
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.productDetailPrice {
+  color: white;
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.productDetailCard {
+  padding-top: 30px;
+}
+
+.productListTitle {
+  color: white;
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 800;
 }
