@@ -13,3 +13,12 @@ body {
   background-repeat: no-repeat;
   height: 100vh;
 }
+
+.productLinks {
+  color: black;
+  text-decoration: none;
+}
+
+.productImages {
+  max-width: 300px;
+}
