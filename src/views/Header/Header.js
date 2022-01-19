@@ -27,7 +27,7 @@ const Header = () => {
           </Column>
           <Column>
             <Heading>
-              <HeaderLink href="/AboutUs">About Us</HeaderLink>
+              <HeaderLink href="/aboutus">About Us</HeaderLink>
             </Heading>
           </Column>
           <Column>
