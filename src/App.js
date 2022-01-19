@@ -15,7 +15,10 @@ import Footer from './views/Footer/Footer';
 import Categories from './views/Product/Categories';
 import Header from './views/Header/Header';
 import ProtectedRoute from './utils/ProtectedRoute';
-import EditUser from './views/User/EditUser';
+import EditProduct from './views/Product/EditProduct';
+import EditUserView from './views/User/EditUserView';
+import UserView from './views/User/UserView';
+
 
 function App() {
   const [currentUser, setCurrentUser] = useState(getUser());
@@ -47,7 +50,7 @@ function App() {
               {!currentUser && <Auth setCurrentUser={setCurrentUser} />}
             </Route>
             {/* View Product */}
-            <Route exact path="/product/:id">
+            <Route exact path="/products/:id">
               <ProductDetails user={currentUser} />
             </Route>
             {/* Add Page */}
@@ -55,13 +58,18 @@ function App() {
               <AddProduct user={currentUser} />
             </ProtectedRoute>
             {/* Edit Product */}
-            {/* <ProtectedRoute exact path="/add/:id" currentUser={currentUser}>
-            <EditProduct user={currentUser} />
-          </ProtectedRoute> */}
-            View Profile/ Edit own Profile
-            {/* <ProtectedRoute exact path="/profile/:id" currentuser={currentUser}>
-              <EditUser user={currentUser} />
-            </ProtectedRoute> */}
+               
+            <ProtectedRoute exact path="/add/:id" currentUser={currentUser}>
+              <EditProduct user={currentUser} />
+            </ProtectedRoute>
+
+            {/* View Profile/ Edit own Profile */}
+            <ProtectedRoute exact path="/profile/:id/edit" currentuser={currentUser}>
+              <EditUserView user={currentUser} />
+            </ProtectedRoute>
+            <Route exact path="/profile/:id">
+              <UserView />
+            </Route>
             {/* About Us */}
             <Route exact path="/aboutus">
               <AboutUs />

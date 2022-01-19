@@ -7,16 +7,16 @@ export const Box = styled.div`
   // bottom: -32px;
   width: 100%;
   height: 10px;
-  @media (max-width: 1000px) {
-    padding: 50px 80px;
-  }
+  // @media (max-width: 1000px) {
+  //   padding: 50px 80px;
+  // }
 `;
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 1000%;
+  max-width: 1000px;
   margin: 0 auto;
   /* background: red; */
 `;
@@ -25,18 +25,19 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-left: 100px;
+  margin-left: 10px;
 `;
 
 export const Row = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
   grid-gap: 10px;
-  margin-left: 100 px;
+  margin-left: 15px;
+  margin-right: 15px;
 
-  @media (max-width: 1000px) {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
+  // @media (max-width: 1000px) {
+  //   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  // }
 `;
 
 export const FooterLink = styled.a`

@@ -12,7 +12,7 @@ const Header = () => {
   };
   return (
     <Box>
-      <Container>
+      <Container className="cont">
         <Row>
           <Column>
             <Heading>
@@ -29,12 +29,12 @@ const Header = () => {
           </Column>
           <Column>
             <Heading>
-              <HeaderLink href="/AboutUs">About Us</HeaderLink>
+              <HeaderLink href="/aboutus">About Us</HeaderLink>
             </Heading>
           </Column>
           <Column>
             <Heading>
-              <HeaderLink href="/EditUser">
+              <HeaderLink href="/UserView">
                 <img
                   src="https://icon-library.com/images/profile-icon-white/profile-icon-white-1.jpg"
                   className="profilepic"

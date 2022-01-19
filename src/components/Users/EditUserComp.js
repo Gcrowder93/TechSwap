@@ -1,23 +1,32 @@
-import React, { useState, useEffect } from 'react';
-// import EditUser from '../../views/User/EditUser';
-// import { fetchUsers } from '../../services/users';
+import React from 'react';
 
-export default function Users() {
-  // const [user, setUser] = useState([]);
-
-  // useEffect(() => {
-  //   const getUser = async () => {
-  //     const data = await fetchUsers();
-  //     setUser(data);
-  //   };
-  //   getUser();
-  // }, []);
-
+export default function EditUserComp({
+  label,
+  userName,
+  slackUser,
+  linkedinUrl,
+  onChange,
+  onSubmit,
+}) {
   return (
     <div>
-      <br></br>
-      <header>.</header>
-      {/* <EditUser user={user} /> */}
+      <div>{label || 'User Info'}</div>
+      <form onSubmit={onSubmit}>
+        <label htmlFor="userName">Name: </label>
+        <input id="userName" name="userName" type="text" value={userName} onChange={onChange} />
+
+        <label htmlFor="slackUser">Slack: </label>
+        <input id="slackUser" name="slackUser" type="text" value={slackUser} onChange={onChange} />
+
+        <label htmlFor="linkedinUrl">LinkedIn: </label>
+        <input
+          id="linkedinUrl"
+          name="linkedinUrl"
+          type="text"
+          value={linkedinUrl}
+          onChange={onChange}
+        />
+      </form>
     </div>
   );
 }
