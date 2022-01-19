@@ -77,6 +77,12 @@ function App() {
             <Route exact path="/categories">
               <Categories />
             </Route>
+
+            {/* Edit Product */}
+
+            <Route exact path="/products/:id/edit" currentUser={currentUser}>
+              <EditProduct />
+            </Route>
           </Switch>
         </BrowserRouter>
         <Header />
