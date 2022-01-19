@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { getProductById, updateProductById } from '../../services/products';
+import EditProductComp from '../../components/Products/EditProductComp';
 
 export default function EditProduct() {
   const [input, setInput] = useState({

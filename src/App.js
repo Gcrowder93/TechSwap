@@ -19,7 +19,6 @@ import EditProduct from './views/Product/EditProduct';
 import EditUserView from './views/User/EditUserView';
 import UserView from './views/User/UserView';
 
-
 function App() {
   const [currentUser, setCurrentUser] = useState(getUser());
 
@@ -57,8 +56,8 @@ function App() {
             <ProtectedRoute exact path="/add" currentUser={currentUser}>
               <AddProduct user={currentUser} />
             </ProtectedRoute>
+
             {/* Edit Product */}
-               
             <ProtectedRoute exact path="/add/:id" currentUser={currentUser}>
               <EditProduct user={currentUser} />
             </ProtectedRoute>
