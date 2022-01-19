@@ -1,4 +1,60 @@
 body {
-  background-color: peachpuff;
   text-align: center;
+  height: 100%;
+}
+
+.background {
+  /* background-image: url('./techbackground.jpeg'); */
+  background-image: url('./techbg2.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: fit-content;
+  height: 100vh;
+}
+
+.cont {
+  width: 100%;
+}
+
+.productLinks {
+  color: black;
+  text-decoration: none;
+}
+
+.productImages {
+  max-width: 300px;
+}
+.logo {
+  width: 90px;
+}
+
+.profilepic {
+  height: 30px;
+  width: 35px;
+}
+
+.homelogo {
+  height: 30px;
+  width: 35px;
+}
+
+.addlogo {
+  height: 30px;
+  width: 35px;
+}
+
+.searchbar {
+  width: 90px;
+  border-radius: 15%;
+}
+
+.searchbtn {
+  width: 37px;
+  border-radius: 15%;
+}
+
+.logoutbtn {
+  width: 65px;
+  border-radius: 15%;
 }

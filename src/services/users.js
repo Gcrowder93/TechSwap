@@ -4,12 +4,49 @@ export function getUser() {
   return client.auth.session();
 }
 
+export async function getUserById(id) {
+  const resp = await client.from('users').select('*').match({ id }).single();
+  return checkError(resp);
+}
+
+export async function fetchUsers() {
+  const resp = await client.from('users').select('*');
+  return checkError(resp);
+}
+
 export async function signUpUser(email, password) {
   const { user, error } = await client.auth.signUp({ email, password });
   if (error) {
     throw error;
   }
   return user;
+}
+
+export async function signUpUserDetails(email, password, usersName, slackUser, linkedinUrl) {
+  const { userDetail, error } = await client.from('users').insert([
+    {
+      email: email,
+      password: password,
+      name: usersName,
+      slack_id: slackUser,
+      linkedin_url: linkedinUrl,
+    },
+  ]);
+  if (error) {
+    throw error;
+  }
+  return userDetail;
+}
+
+export async function editUserDetails(id, { userName, slackUser, linkedinUrl }) {
+  const { userDetail, error } = await client
+    .from('users')
+    .update({ userName, slackUser, linkedinUrl })
+    .match({ id });
+  if (error) {
+    throw error;
+  }
+  return userDetail;
 }
 
 export async function signInUser(email, password) {

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import AuthForm from '../../components/Auth/AuthForm';
-import { signInUser, signUpUser } from '../../services/users';
+import { signInUser, signUpUser, signUpUserDetails } from '../../services/users';
 import classnames from 'classnames';
+import AuthReg from '../../components/Auth/AuthReg';
 
 export default function Auth({ setCurrentUser }) {
   const [type, setType] = useState('Sign In');
@@ -18,16 +19,8 @@ export default function Auth({ setCurrentUser }) {
       if (type === 'Sign In') {
         resp = await signInUser(email, password);
       } else {
-        resp = await signUpUser(
-          email,
-          password,
-          slackUser,
-          setSlack,
-          linkedinUrl,
-          setLinkedinUrl,
-          usersName,
-          setUsersName
-        );
+        resp = await signUpUser(email, password);
+        await signUpUserDetails(email, password, slackUser, linkedinUrl, usersName);
       }
       setCurrentUser(resp);
     } catch {
@@ -36,6 +29,8 @@ export default function Auth({ setCurrentUser }) {
   };
   return (
     <div className="Link">
+      <br></br>
+      <br></br>
       <div classnames="Link">
         <h1
           onClick={() => {
@@ -55,21 +50,31 @@ export default function Auth({ setCurrentUser }) {
         </h1>
       </div>
       <p> {type} </p>
-
-      <AuthForm
-        email={email}
-        setEmail={setEmail}
-        password={password}
-        setPassword={setPassword}
-        handleSubmit={handleSubmit}
-        errorMessage={errorMessage}
-        // slackUser={slackUser}
-        // setSlack={setSlack}
-        // linkedinUrl={linkedinUrl}
-        // setLinkedinUrl={setLinkedinUrl}
-        // usersName={usersName}
-        // setUsersName={setUsersName}
-      />
+      {type === 'Sign In' ? (
+        <AuthForm
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          handleSubmit={handleSubmit}
+          errorMessage={errorMessage}
+        />
+      ) : (
+        <AuthReg
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          handleSubmit={handleSubmit}
+          errorMessage={errorMessage}
+          slackUser={slackUser}
+          setSlack={setSlack}
+          linkedinUrl={linkedinUrl}
+          setLinkedinUrl={setLinkedinUrl}
+          usersName={usersName}
+          setUsersName={setUsersName}
+        />
+      )}
     </div>
   );
 }
