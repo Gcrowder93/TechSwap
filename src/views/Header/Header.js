@@ -12,7 +12,7 @@ const Header = () => {
   };
   return (
     <Box>
-      <Container>
+      <Container className="cont">
         <Row>
           <Column>
             <Heading>
@@ -22,7 +22,9 @@ const Header = () => {
                   className="homelogo"
                 ></img>
               </HeaderLink>
-              <button onClick={logoutUser}>Log Out</button>
+              {/* <button className="logoutbtn" onClick={logoutUser}>
+                Log Out
+              </button> */}
             </Heading>
           </Column>
           <Column>
@@ -32,7 +34,7 @@ const Header = () => {
           </Column>
           <Column>
             <Heading>
-              <HeaderLink href="#">
+              <HeaderLink href="/UserView">
                 <img
                   src="https://icon-library.com/images/profile-icon-white/profile-icon-white-1.jpg"
                   className="profilepic"
@@ -41,12 +43,20 @@ const Header = () => {
             </Heading>
           </Column>
           <Column>
-            {' '}
             <Heading>
-              {/* <HeaderLink href="#">Search</HeaderLink> */}
-              <input placeholder="Search"></input>
-              <button className="searchbtn">Search</button>
+              {/* <HeaderLink href="#">
+                <input placeholder="Search"></input>
+                <button className="searchbtn">Search</button>
+                !!
+              </HeaderLink> */}
+              <input className="searchbar" placeholder="Search"></input>
+              <button className="searchbtn">GO</button>
             </Heading>
+          </Column>
+          <Column>
+            <button className="logoutbtn" onClick={logoutUser}>
+              Log Out
+            </button>
           </Column>
         </Row>
       </Container>
