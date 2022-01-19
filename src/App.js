@@ -58,7 +58,7 @@ function App() {
             </ProtectedRoute>
 
             {/* Edit Product */}
-            <ProtectedRoute exact path="/add/:id" currentUser={currentUser}>
+            <ProtectedRoute exact path="/edit/:id" currentUser={currentUser}>
               <EditProduct user={currentUser} />
             </ProtectedRoute>
 
@@ -67,7 +67,7 @@ function App() {
               <EditUserView user={currentUser} />
             </ProtectedRoute>
             <Route exact path="/profile/:id">
-              <UserView />
+              <UserView currentUser={currentUser} />
             </Route>
             {/* About Us */}
             <Route exact path="/aboutus">
