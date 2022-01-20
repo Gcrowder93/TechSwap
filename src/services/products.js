@@ -31,13 +31,16 @@ export async function createProduct({ file, title, description, price, categorie
     condition: condition,
     image: publicURL,
   });
-  console.log('category', categories);
-  console.log(resp);
   return checkError(resp);
 }
 
 export async function getProductById(id) {
   const resp = await client.from('products').select('*').match({ id }).single();
+  return checkError(resp);
+}
+
+export async function getProductUserId(id) {
+  const resp = await client.from('products').select('id').match({ user_id: id }).single();
   return checkError(resp);
 }
 
@@ -67,6 +70,7 @@ export async function updateProductById(
   }
 
   console.log(resp);
+
   return checkError(resp);
 }
 

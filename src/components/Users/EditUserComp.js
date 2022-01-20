@@ -15,10 +15,10 @@ export default function EditUserComp({
       <form onSubmit={onSubmit}>
         <label htmlFor="userName">Name: </label>
         <input id="userName" name="userName" type="text" value={userName} onChange={onChange} />
-
+        <br />
         <label htmlFor="slackUser">Slack: </label>
         <input id="slackUser" name="slackUser" type="text" value={slackUser} onChange={onChange} />
-
+        <br />
         <label htmlFor="linkedinUrl">LinkedIn: </label>
         <input
           id="linkedinUrl"

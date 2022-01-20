@@ -1,4 +1,5 @@
 import React from 'react';
+import DeleteProduct from '../../views/Product/DeleteProduct';
 
 export default function EditProductComp({
   title,
@@ -9,10 +10,14 @@ export default function EditProductComp({
   condition,
   onStateChange,
   onSubmit,
+  productToDelete,
+  handleDelete,
+  id,
 }) {
   return (
     <div className="editProductForm">
       <form onSubmit={onSubmit}>
+        <label>Title:</label>
         <input
           name="title"
           id="title"
@@ -20,6 +25,7 @@ export default function EditProductComp({
           value={title}
           onChange={(e) => onStateChange(e)}
         />
+        <label>Price:</label>
         <input
           name="price"
           id="price"
@@ -28,6 +34,7 @@ export default function EditProductComp({
           value={price}
           onChange={(e) => onStateChange(e)}
         />
+        <label>Category:</label>
         <input
           name="category"
           id="categories"
@@ -36,6 +43,7 @@ export default function EditProductComp({
           value={categories}
           onChange={(e) => onStateChange(e)}
         />
+        <label>Condition:</label>
         <input
           name="condition"
           id="condition"
@@ -44,6 +52,7 @@ export default function EditProductComp({
           value={condition}
           onChange={(e) => onStateChange(e)}
         />
+        <label>Description:</label>
         <input
           name="description"
           id="description"
@@ -52,6 +61,7 @@ export default function EditProductComp({
           value={description}
           onChange={(e) => onStateChange(e)}
         />
+        <label>Image:</label>
         <input
           name="file"
           id="image"
@@ -63,7 +73,7 @@ export default function EditProductComp({
         <input type="submit" value="Submit" />
       </form>
 
-      <button>Delete Product</button>
+      <button onClick={() => handleDelete(id)}>Delete Product</button>
     </div>
   );
 }

@@ -58,31 +58,37 @@ function App() {
               )}
               {!currentUser && <Auth setCurrentUser={setCurrentUser} />}
             </Route>
+
             {/* View Product */}
             <Route exact path="/products/:id">
               <ProductDetails user={currentUser} />
             </Route>
+
             {/* Add Page */}
             <ProtectedRoute exact path="/add" currentUser={currentUser}>
               <AddProduct user={currentUser} />
             </ProtectedRoute>
 
             {/* Edit Product */}
-            <ProtectedRoute exact path="/edit/:id" currentUser={currentUser}>
+            {/* <ProtectedRoute exact path="/edit/:id" currentUser={currentUser}>
               <EditProduct user={currentUser} />
-            </ProtectedRoute>
+            </ProtectedRoute> */}
 
             {/* View Profile/ Edit own Profile */}
             <ProtectedRoute exact path="/profile/:id/edit" currentUser={currentUser}>
               <EditUserView exact path="/profile/:id/edit" currentUser={currentUser} />
             </ProtectedRoute>
+
+            {/* Profile */}
             <Route exact path="/profile/:id">
               <UserView exact path="/profile/:id" currentUser={currentUser} />
             </Route>
+
             {/* About Us */}
             <Route exact path="/aboutus">
               <AboutUs />
             </Route>
+
             {/* Need to create Categories views */}
             <Route exact path="/categories">
               <Categories />
