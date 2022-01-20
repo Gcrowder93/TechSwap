@@ -5,13 +5,11 @@ import phoenix from './PFPs/phoenix.png';
 import mark from './PFPs/mark.png';
 import chase from './PFPs/chase.png';
 import brett from './PFPs/brett.png';
-
-// import Autocomplete from '../../AutoComplete';
-// import ProductsCard from '../Products/ProductsCard';
+import linkedin from './PFPs/linkedin.png';
 
 export default function AboutUs() {
   return (
-    <div className="pfp">
+    <div className="aboutus">
       {/* <br></br>
       <br></br>
       <section>
@@ -20,11 +18,13 @@ export default function AboutUs() {
         </div>
       </section> */}
       <br></br>
-      <br></br>
-      <h1>About Us</h1>
+      <h1>About the Creators</h1>
       <br></br>
       <Link to={{ pathname: 'https://www.linkedin.com/in/james-demiraiakian/' }} target="_blank">
-        <img src={james}></img>
+        <div className="us">
+          <img src={james} className="pfp"></img>
+          <img src={linkedin} className="linkedin"></img>
+        </div>
         <h2>James</h2>
       </Link>
       <p>
@@ -38,7 +38,10 @@ export default function AboutUs() {
         to={{ pathname: 'https://www.linkedin.com/in/mark-voltaire-4907091bb/' }}
         target="_blank"
       >
-        <img src={mark}></img>
+        <div className="us">
+          <img src={mark} className="pfp"></img>
+          <img src={linkedin} className="linkedin"></img>
+        </div>
         <h2>Mark</h2>
       </Link>
       <p>
@@ -48,7 +51,10 @@ export default function AboutUs() {
       </p>
       <br></br>
       <Link to={{ pathname: 'https://www.linkedin.com/in/gregory-crowder/' }} target="_blank">
-        <img src={chase}></img>
+        <div className="us">
+          <img src={chase} className="pfp"></img>
+          <img src={linkedin} className="linkedin"></img>
+        </div>
         <h2>Chase</h2>
       </Link>
       <p>
@@ -59,7 +65,10 @@ export default function AboutUs() {
       </p>
       <br></br>
       <Link to={{ pathname: 'https://www.linkedin.com/in/phoenix-nicholson/' }} target="_blank">
-        <img src={phoenix}></img>
+        <div className="us">
+          <img src={phoenix} className="pfp"></img>
+          <img src={linkedin} className="linkedin"></img>
+        </div>
         <h2>Phoenix</h2>
       </Link>
       <p>
@@ -70,7 +79,10 @@ export default function AboutUs() {
       </p>
       <br></br>
       <Link to={{ pathname: 'https://www.linkedin.com/in/brett-seifried/' }} target="_blank">
-        <img src={brett}></img>
+        <div className="us">
+          <img src={brett} className="pfp"></img>
+          <img src={linkedin} className="linkedin"></img>
+        </div>
         <h2>Brettford</h2>
       </Link>
       <p>
