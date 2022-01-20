@@ -1,23 +1,15 @@
-import React /*useState, useEffect*/ from 'react';
+import React, { useState, useEffect } from 'react';
 // import EditUser from '../../views/User/EditUser';
 // import { fetchUsers } from '../../services/users';
 
-export default function Users() {
-  // const [user, setUser] = useState([]);
-
-  // useEffect(() => {
-  //   const getUser = async () => {
-  //     const data = await fetchUsers();
-  //     setUser(data);
-  //   };
-  //   getUser();
-  // }, []);
-
+export default function Users({ user }) {
   return (
     <div>
-      <br></br>
-      <header>.</header>
-      {/* <EditUser user={user} /> */}
+      <h1>Profile</h1>
+      <div>Name: {user.name}</div>
+      <div>Email: {user.email}</div>
+      <div>LinkedIn: {user.linkedin_url}</div>
+      <div>Slack: {user.slack_id}</div>
     </div>
   );
 }

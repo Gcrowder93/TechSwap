@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import EditUserComp from '../../components/Users/EditUserComp';
 import { editUserDetails, getUserById } from '../../services/users';
-import EditUserComp from '../../components/Users/Users';
 
-export default function EditUserView() {
+export default function EditUserView({ currentUser }) {
   const [input, setInput] = useState({ userName: '', slackUser: '', linkedinUrl: '' });
   const [user, setUser] = useState({ userName: '', slackUser: '', linkedinUrl: '' });
   const [alert, setAlert] = useState('');
   const history = useHistory();
-  const { id } = useParams();
+  const id = currentUser.user.id;
 
   useEffect(() => {
     setInput(user);
@@ -18,7 +17,6 @@ export default function EditUserView() {
   useEffect(() => {
     const fetchData = async () => {
       const resp = await getUserById(id);
-      console.log(resp);
       setUser(resp);
     };
     fetchData();
@@ -37,7 +35,8 @@ export default function EditUserView() {
         slackUser: input.slackUser,
         linkedinUrl: input.linkedinUrl,
       });
-      history.push(`/profile/${resp[0].id}`);
+      history.push(`/profile/${user.id}`);
+      setUser(resp);
     } catch (e) {
       setAlert(e.message ? e.message : 'WRONG');
     }
@@ -55,6 +54,7 @@ export default function EditUserView() {
         onChange={onChange}
         onSubmit={onSubmit}
       />
+      <button onClick={onSubmit}>Submit</button>
     </div>
   );
 }

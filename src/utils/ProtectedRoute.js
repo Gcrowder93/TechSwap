@@ -21,8 +21,6 @@ export function ProtectedAuthRoute({
   children,
   ...rest
 }) {
-  console.log('ALSO HERE', currentUser);
-  console.log('HERE', currentProduct);
   console.log('CURRENT USER', currentUser);
   console.log('CURRENT PRODUCT', currentProduct);
   console.log('CURRENT userID', userId);

@@ -11,7 +11,7 @@ export default function EditProductComp({
   onSubmit,
 }) {
   return (
-    <div className="edit-card">
+    <div className="editProductForm">
       <form onSubmit={onSubmit}>
         <label>Title:</label>
         <input

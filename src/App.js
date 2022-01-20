@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import { useState } from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import { logout, getUser, getUserById } from './services/users';
+import { logout, getUser } from './services/users';
 import Auth from './views/Auth/Auth';
 import ProductsCard from './components/Products/ProductsCard';
 import ProductPage from './views/Product/ProductPage';
@@ -14,44 +14,33 @@ import AboutUs from './components/AboutUs/AboutUs';
 import Footer from './views/Footer/Footer';
 import Categories from './views/Product/Categories';
 import Header from './views/Header/Header';
-import ProtectedRoute, { ProtectedAuthRoute } from './utils/ProtectedRoute';
+import ProtectedRoute from './utils/ProtectedRoute';
 import EditProduct from './views/Product/EditProduct';
 import EditUserView from './views/User/EditUserView';
 import UserView from './views/User/UserView';
-import { getProductUserId } from './services/products';
-import { useEffect } from 'react';
+
+// import Autocomplete from './AutoComplete';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(getUser());
-  const [currentProduct, setCurrentProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [userId, setUserId] = useState();
-
-  useEffect(() => {
-    const productId = async () => {
-      const userIdResp = await getUserById(currentUser.user.id);
-      // console.log('look here', userId);
-      setUserId(userIdResp);
-      const resp = await getProductUserId(userIdResp.id);
-      setCurrentProduct(resp);
-      setLoading(false);
-      // console.log(resp);
-    };
-    productId();
-  }, []);
 
   const logoutUser = async () => {
     await logout();
     setCurrentUser(null);
-    setCurrentProduct(null);
   };
-
-  if (loading) return <div>loading</div>;
 
   return (
     <div className="App">
       <div className="background">
         <button onClick={logoutUser}>Log Out</button>
+        <br></br>
+        {/* <br></br>
+        <br></br>
+        <section>
+          <div className="searchbarsearch">
+            <Autocomplete Products={ProductsCard} />
+          </div>
+        </section> */}
         <BrowserRouter>
           {/* HOME page */}
           <Switch>
@@ -97,13 +86,13 @@ function App() {
             </ProtectedAuthRoute> */}
 
             {/* View Profile/ Edit own Profile */}
-            <ProtectedRoute exact path="/profile/:id/edit" currentuser={currentUser}>
-              <EditUserView user={currentUser} />
+            <ProtectedRoute exact path="/profile/:id/edit" currentUser={currentUser}>
+              <EditUserView exact path="/profile/:id/edit" currentUser={currentUser} />
             </ProtectedRoute>
 
             {/* Profile */}
             <Route exact path="/profile/:id">
-              <UserView path="/profile/:id" currentUser={currentUser} />
+              <UserView exact path="/profile/:id" currentUser={currentUser} />
             </Route>
 
             {/* About Us */}
@@ -115,9 +104,15 @@ function App() {
             <Route exact path="/categories">
               <Categories />
             </Route>
+
+            {/* Edit Product */}
+
+            <Route exact path="/products/:id/edit" currentUser={currentUser}>
+              <EditProduct />
+            </Route>
           </Switch>
         </BrowserRouter>
-        <Header />
+        <Header currentUser={currentUser} />
         {/* <EditUser /> */}
         <Footer />
       </div>

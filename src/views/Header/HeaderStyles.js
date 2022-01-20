@@ -25,25 +25,25 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-left: 10px;
+  // margin-left: 1px;
 `;
 
 export const Row = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
   grid-gap: 10px;
   margin-left: 15px;
   margin-right: 15px;
 
   // @media (max-width: 1000px) {
-  //   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  //   grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
   // }
 `;
 
 export const HeaderLink = styled.a`
   color: #fff;
   margin-bottom: 2px;
-  font-size: 18px;
+  font-size: 16px;
   text-decoration: none;
 
   &:hover {
@@ -53,7 +53,7 @@ export const HeaderLink = styled.a`
 `;
 
 export const Heading = styled.p`
-  font-size: 24px;
+  font-size: 10px;
   color: #fff;
   margin-bottom: 5px;
   margin-top: -10px;
