@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import { getProductById, updateProductById, deleteProduct } from '../../services/products';
+import {
+  getProductById,
+  updateProductById,
+  deleteProduct,
+  fetchProducts,
+} from '../../services/products';
 import EditProductComp from '../../components/Products/EditProductComp';
 import { getUserById } from '../../services/users';
 import { client } from '../../services/client';
@@ -17,6 +22,7 @@ export default function EditProduct() {
   const history = useHistory();
   const [alert, setAlert] = useState('');
   const { id } = useParams();
+  const [productToDelete, setProductToDelete] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -32,6 +38,15 @@ export default function EditProduct() {
     };
     fetchData();
   }, [id, history]);
+
+  const handleDelete = async (productId) => {
+    const shouldDelete = confirm('Are you sure you want to delete this product');
+
+    if (shouldDelete) {
+      await deleteProduct(productId);
+      history.push('/');
+    }
+  };
 
   const onStateChange = ({ target }) => {
     setProduct((prevState) => ({ ...prevState, [target.name]: target.value }));
@@ -70,6 +85,10 @@ export default function EditProduct() {
         setProduct={setProduct}
         onStateChange={onStateChange}
         onSubmit={onSubmit}
+        productToDelete={productToDelete}
+        setProductToDelete={setProductToDelete}
+        handleDelete={handleDelete}
+        id={id}
       />
     </>
   );
