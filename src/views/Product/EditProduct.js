@@ -8,7 +8,7 @@ export default function EditProduct() {
     title: '',
     description: '',
     price: '',
-    image: '',
+    file: null,
     category: '',
     condition: '',
   });
@@ -25,7 +25,11 @@ export default function EditProduct() {
   }, [id]);
 
   const onStateChange = ({ target }) => {
-    setProduct((prevState) => ({ ...prevState, [target.name]: target.value }));
+    if (target.name === 'file') {
+      setProduct((prevState) => ({ ...prevState, [target.name]: target.files[0] }));
+    } else {
+      setProduct((prevState) => ({ ...prevState, [target.name]: target.value }));
+    }
   };
 
   const onSubmit = async (e) => {
@@ -35,7 +39,7 @@ export default function EditProduct() {
       const resp = await updateProductById(product.id, {
         title: product.title,
         description: product.description,
-        image: product.image,
+        file: product.file,
         category: product.category,
         condition: product.condition,
       });
@@ -53,7 +57,6 @@ export default function EditProduct() {
         title={product.title}
         description={product.description}
         price={product.price}
-        image={product.image}
         category={product.category}
         condition={product.condition}
         setProduct={setProduct}
