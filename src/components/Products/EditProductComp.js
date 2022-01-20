@@ -5,7 +5,7 @@ export default function EditProductComp({
   title,
   description,
   price,
-  image,
+  file,
   categories,
   condition,
   onStateChange,
@@ -63,11 +63,10 @@ export default function EditProductComp({
         />
         <label>Image:</label>
         <input
-          name="image"
+          name="file"
           id="image"
-          type="text"
+          type="file"
           placeholder="Image"
-          value={image}
           onChange={(e) => onStateChange(e)}
         />
 

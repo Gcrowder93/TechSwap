@@ -46,28 +46,35 @@ export async function getProductUserId(id) {
 
 export async function updateProductById(
   id,
-  { title, description, price, image, category, condition }
+  { title, description, price, file, category, condition }
 ) {
-  const resp = await client
-    .from('products')
-    .update({ title, description, price, image, category, condition })
-    .match({ id });
+  let resp;
+
+  if (file) {
+    await client.storage
+      .from('product-image')
+      .upload(`public/${file.name}`, file, { upsert: true });
+
+    const { publicURL } = await client.storage
+      .from('product-image')
+      .getPublicUrl(`public/${file.name}`);
+    resp = await client
+      .from('products')
+      .update({ title, description, price, image: publicURL, category, condition })
+      .match({ id });
+  } else {
+    resp = await client
+      .from('products')
+      .update({ title, description, price, category, condition })
+      .match({ id });
+  }
+
+  console.log(resp);
+
   return checkError(resp);
 }
 
 export async function deleteProduct(id) {
   const resp = await client.from('products').delete().match({ id });
-  return checkError(resp);
-}
-
-export async function uploadProductImage(userId, file) {
-  const ext = file.name.split('.').pop();
-
-  await client.storage.from('products').upload(`public/${userId}.${ext}`, file, { upsert: true });
-
-  const { publicURL } = await client.storage.from('products').getPublicUrl(`/${userId}.${ext}`);
-
-  const resp = await client.from('users').update({ image: publicURL }).eq('id', userId).single();
-
   return checkError(resp);
 }
