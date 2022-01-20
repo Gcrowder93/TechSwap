@@ -17,7 +17,6 @@ export default function EditUserView({ currentUser }) {
   useEffect(() => {
     const fetchData = async () => {
       const resp = await getUserById(id);
-      console.log(resp);
       setUser(resp);
     };
     fetchData();

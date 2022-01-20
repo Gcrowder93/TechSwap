@@ -95,7 +95,7 @@ function App() {
             </Route>
           </Switch>
         </BrowserRouter>
-        <Header />
+        <Header currentUser={currentUser} />
         {/* <EditUser /> */}
         <Footer />
       </div>
