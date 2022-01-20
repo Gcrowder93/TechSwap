@@ -70,9 +70,9 @@ function App() {
             </ProtectedRoute>
 
             {/* Edit Product */}
-            <ProtectedRoute exact path="/edit/:id" currentUser={currentUser}>
+            {/* <ProtectedRoute exact path="/edit/:id" currentUser={currentUser}>
               <EditProduct user={currentUser} />
-            </ProtectedRoute>
+            </ProtectedRoute> */}
 
             {/* View Profile/ Edit own Profile */}
             <ProtectedRoute exact path="/profile/:id/edit" currentUser={currentUser}>
