@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getUserById } from '../../services/users';
 import Auth from '../Auth/Auth';
+import Users from '../../components/Users/Users';
 
 export default function UserView({ currentUser, setCurrentUser }) {
   const [user, setUser] = useState({});
@@ -26,7 +27,7 @@ export default function UserView({ currentUser, setCurrentUser }) {
     <>
       <div>User Profile View</div>
       <br></br>
-      <div>{user.name}</div>
+      <Users user={user} />
       <Link to={`/profile/${user.id}/edit`}>Edit</Link>
     </>
   );
