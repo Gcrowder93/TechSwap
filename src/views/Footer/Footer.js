@@ -38,7 +38,7 @@ const Footer = () => {
             </Heading>
           </Column>
           <Column>
-            <FooterLink className="aboutfoot" href="/profile">
+            <FooterLink className="aboutfoot" href="/aboutus">
               About Us
             </FooterLink>
           </Column>
