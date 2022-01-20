@@ -16,14 +16,20 @@ export async function fetchProducts() {
 //   });
 //   return checkError(resp);
 // }
-export async function createProduct({ title, description, price, categories, condition, image }) {
+export async function createProduct({ file, title, description, price, categories, condition }) {
+  await client.storage.from('product-image').upload(`public/${file.name}`, file, { upsert: true });
+
+  const { publicURL } = await client.storage
+    .from('product-image')
+    .getPublicUrl(`public/${file.name}`);
+
   const resp = await client.from('products').insert({
     title: title,
     description: description,
     price: price,
     category: categories,
     condition: condition,
-    image: image,
+    image: publicURL,
   });
   console.log('category', categories);
   console.log(resp);
@@ -49,5 +55,17 @@ export async function updateProductById(
 
 export async function deleteProduct(id) {
   const resp = await client.from('products').delete().match({ id });
+  return checkError(resp);
+}
+
+export async function uploadProductImage(userId, file) {
+  const ext = file.name.split('.').pop();
+
+  await client.storage.from('products').upload(`public/${userId}.${ext}`, file, { upsert: true });
+
+  const { publicURL } = await client.storage.from('products').getPublicUrl(`/${userId}.${ext}`);
+
+  const resp = await client.from('users').update({ image: publicURL }).eq('id', userId).single();
+
   return checkError(resp);
 }

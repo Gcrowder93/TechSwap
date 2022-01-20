@@ -4,7 +4,6 @@ export default function ProductForm({
   title,
   description,
   price,
-  image,
   categories,
   condition,
   onSubmit,
@@ -29,7 +28,7 @@ export default function ProductForm({
       <input id="price" name="price" type="number" value={price} onChange={(e) => onChange(e)} />
 
       <label>Image:</label>
-      <input id="image" name="image" type="text" value={image} onChange={(e) => onChange(e)} />
+      <input id="image" name="file" type="file" onChange={(e) => onChange(e)} />
 
       <label>Category:</label>
       <input
