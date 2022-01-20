@@ -46,3 +46,8 @@ export async function updateProductById(
   console.log(resp);
   return checkError(resp);
 }
+
+export async function deleteProduct(id) {
+  const resp = await client.from('products').delete().match({ id });
+  return checkError(resp);
+}

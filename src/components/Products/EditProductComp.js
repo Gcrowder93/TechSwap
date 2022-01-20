@@ -63,6 +63,8 @@ export default function EditProductComp({
 
         <input type="submit" value="Submit" />
       </form>
+
+      <button>Delete Product</button>
     </div>
   );
 }
