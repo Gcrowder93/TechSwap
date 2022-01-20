@@ -30,6 +30,5 @@ export async function updateProductById(
     .from('products')
     .update({ title, description, price, image, category, condition })
     .match({ id });
-  console.log(resp);
   return checkError(resp);
 }

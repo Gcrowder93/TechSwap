@@ -27,12 +27,12 @@ const Header = () => {
               </button> */}
             </Heading>
           </Column>
-          {/* <Column>
+          <Column>
             <Heading>
               <HeaderLink href="/aboutus">About Us</HeaderLink>
             </Heading>
-          </Column> */}
-          {/* <Column>
+          </Column>
+          <Column>
             <Heading>
               <HeaderLink href="/UserView">
                 <img
@@ -41,31 +41,22 @@ const Header = () => {
                 ></img>
               </HeaderLink>
             </Heading>
-          </Column> */}
-          <Column>
-            <button className="logoutbtn" onClick={logoutUser}>
-              Log Out
-            </button>
           </Column>
-          <Column></Column>
           <Column>
-            {/* <HeaderLink href="#">
+            <Heading>
+              {/* <HeaderLink href="#">
                 <input placeholder="Search"></input>
                 <button className="searchbtn">Search</button>
                 !!
               </HeaderLink> */}
-            <input className="searchbar" placeholder="Search"></input>
-            {/* <button className="searchbtn">GO</button> */}
+              <input className="searchbar" placeholder="Search"></input>
+              <button className="searchbtn">GO</button>
+            </Heading>
           </Column>
           <Column>
-            <Heading>
-              <HeaderLink href="/categories">
-                <img
-                  src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/list-icon-18-256.png"
-                  className="categoriesbtn"
-                ></img>
-              </HeaderLink>
-            </Heading>
+            <button className="logoutbtn" onClick={logoutUser}>
+              Log Out
+            </button>
           </Column>
         </Row>
       </Container>
