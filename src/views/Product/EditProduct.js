@@ -4,6 +4,14 @@ import { getProductById, updateProductById } from '../../services/products';
 import EditProductComp from '../../components/Products/EditProductComp';
 
 export default function EditProduct() {
+  const [input, setInput] = useState({
+    title: '',
+    description: '',
+    price: '',
+    image: '',
+    category: '',
+    condition: '',
+  });
   const [product, setProduct] = useState({
     title: '',
     description: '',
@@ -17,6 +25,10 @@ export default function EditProduct() {
   const { id } = useParams();
 
   useEffect(() => {
+    setInput(product);
+  }, [product]);
+
+  useEffect(() => {
     const fetchData = async () => {
       const resp = await getProductById(id);
       setProduct(resp);
@@ -24,8 +36,8 @@ export default function EditProduct() {
     fetchData();
   }, [id]);
 
-  const onStateChange = ({ target }) => {
-    setProduct((prevState) => ({ ...prevState, [target.name]: target.value }));
+  const onChange = ({ target }) => {
+    setInput((prevState) => ({ ...prevState, [target.name]: target.value }));
   };
 
   const onSubmit = async (e) => {
@@ -33,11 +45,11 @@ export default function EditProduct() {
 
     try {
       const resp = await updateProductById(product.id, {
-        title: product.title,
-        description: product.description,
-        image: product.image,
-        category: product.category,
-        condition: product.condition,
+        title: input.title,
+        description: input.description,
+        image: input.image,
+        category: input.category,
+        condition: input.condition,
       });
       history.push(`/products/${resp[0].id}`);
     } catch (e) {
@@ -50,15 +62,14 @@ export default function EditProduct() {
       <span>Edit Product</span>
       <p>{alert}</p>
       <EditProductComp
-        title={product.title}
-        description={product.description}
-        price={product.price}
-        image={product.image}
-        category={product.category}
-        condition={product.condition}
-        setProduct={setProduct}
-        onStateChange={onStateChange}
-        onSubmit={onSubmit}
+        title={input.title}
+        description={input.description}
+        price={input.price}
+        image={input.image}
+        category={input.category}
+        condition={input.condition}
+        onChange={input.onChange}
+        onSubmit={input.onSubmit}
       />
     </>
   );

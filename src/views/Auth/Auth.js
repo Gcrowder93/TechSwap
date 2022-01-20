@@ -20,7 +20,7 @@ export default function Auth({ setCurrentUser }) {
         resp = await signInUser(email, password);
       } else {
         resp = await signUpUser(email, password);
-        await signUpUserDetails(resp.id, email, slackUser, linkedinUrl, usersName);
+        await signUpUserDetails(email, password, slackUser, linkedinUrl, usersName);
       }
       setCurrentUser(resp);
     } catch {
