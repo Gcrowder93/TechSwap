@@ -70,20 +70,9 @@ function App() {
             </ProtectedRoute>
 
             {/* Edit Product */}
-            <ProtectedRoute exact path="/edit/:id" currentUser={currentUser}>
+            {/* <ProtectedRoute exact path="/edit/:id" currentUser={currentUser}>
               <EditProduct user={currentUser} />
-            </ProtectedRoute>
-
-            {/* GABE LOOK HERE */}
-            {/* <ProtectedAuthRoute
-              exact
-              path="/edit/:id"
-              currentUser={currentUser}
-              currentProduct={currentProduct}
-              userId={userId}
-            >
-              <EditProduct user={currentUser} product={currentProduct} />
-            </ProtectedAuthRoute> */}
+            </ProtectedRoute> */}
 
             {/* View Profile/ Edit own Profile */}
             <ProtectedRoute exact path="/profile/:id/edit" currentUser={currentUser}>
