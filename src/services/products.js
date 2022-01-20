@@ -25,13 +25,16 @@ export async function createProduct({ title, description, price, categories, con
     condition: condition,
     image: image,
   });
-  console.log('category', categories);
-  console.log(resp);
   return checkError(resp);
 }
 
 export async function getProductById(id) {
   const resp = await client.from('products').select('*').match({ id }).single();
+  return checkError(resp);
+}
+
+export async function getProductUserId(id) {
+  const resp = await client.from('products').select('id').match({ user_id: id }).single();
   return checkError(resp);
 }
 
@@ -43,7 +46,6 @@ export async function updateProductById(
     .from('products')
     .update({ title, description, price, image, category, condition })
     .match({ id });
-  console.log(resp);
   return checkError(resp);
 }
 
