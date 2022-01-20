@@ -1,4 +1,5 @@
 import React from 'react';
+import DeleteProduct from '../../views/Product/DeleteProduct';
 
 export default function EditProductComp({
   title,
@@ -9,6 +10,9 @@ export default function EditProductComp({
   condition,
   onStateChange,
   onSubmit,
+  productToDelete,
+  handleDelete,
+  id,
 }) {
   return (
     <div className="editProductForm">
@@ -64,7 +68,7 @@ export default function EditProductComp({
         <input type="submit" value="Submit" />
       </form>
 
-      <button>Delete Product</button>
+      <button onClick={() => handleDelete(id)}>Delete Product</button>
     </div>
   );
 }
