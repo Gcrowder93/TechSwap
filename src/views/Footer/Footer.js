@@ -19,7 +19,10 @@ const Footer = () => {
           </Column>
           <Column>
             <Heading>
-              <FooterLink href="#">
+              <FooterLink
+                href="https://alchemycodelab.slack.com
+"
+              >
                 <img
                   src="https://cdn.bfldr.com/5H442O3W/at/pl55kl-dg5od4-28v85w/Slack_Monochrome_White.png?auto=webp&format=png"
                   className="logo"
@@ -50,7 +53,6 @@ const Footer = () => {
                   className="profilepic"
                 ></img>
               </FooterLink>
-              <FooterLink href="#"></FooterLink>
             </Heading>
           </Column>
         </Row>
