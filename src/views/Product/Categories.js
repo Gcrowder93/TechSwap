@@ -1,4 +1,5 @@
 import React from 'react';
+// import AutoComplete from '../../AutoComplete';
 
 export default function Categories() {
   return (

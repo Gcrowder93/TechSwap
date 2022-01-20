@@ -3,14 +3,13 @@ import '../../App.css';
 import { Box, Container, Row, Column, HeaderLink, Heading } from './HeaderStyles';
 import { getUser, getUserById, logout } from '../../services/users';
 import { useState } from 'react';
-// import { Redirect } from 'react-router-dom';
-import Autocomplete from '../../AutoComplete';
 import Auth from '../Auth/Auth';
 
 const Header = () => {
   const [currentUser, setCurrentUser] = useState(getUser());
   const [user, setUser] = useState({});
-  const [products, getProductbyId] = useState();
+  // const [products, setProducts] = useState('');
+  const [query, setQuery] = useState('');
 
   useEffect(() => {
     if (currentUser === null) {
@@ -40,16 +39,8 @@ const Header = () => {
                   className="homelogo"
                 ></img>
               </HeaderLink>
-              {/* <button className="logoutbtn" onClick={logoutUser}>
-                Log Out
-              </button> */}
             </Heading>
           </Column>
-          {/* <Column>
-            <Heading>
-              <HeaderLink href="/aboutus">About Us</HeaderLink>
-            </Heading>
-          </Column> */}
           <Column>
             <button className="logoutbtn" onClick={logoutUser}>
               Log Out
@@ -67,19 +58,21 @@ const Header = () => {
           </Column>
           <Column>
             {/* <HeaderLink href="#">
-                <input placeholder="Search"></input>
-                <button className="searchbtn">Search</button>
-                !!
-              </HeaderLink> */}
-            <input className="searchbar" placeholder="Search"></input>
-            {/* <br></br> */}
-            {/* <br></br> */}
-            {/* <section>
-              <div className="searchbarsearch">
-                <Autocomplete getProductbyId={products} />
-              </div>
-            </section> */}
-            {/* <button className="searchbtn">GO</button> */}
+              <input placeholder="Search"></input>
+              <button className="searchbtn">Search</button>
+            </HeaderLink> */}
+
+            <input
+              type="text"
+              className="searchbar"
+              value={query}
+              placeholder="Search"
+              // onChange={setProducts}
+              onChange={(e) => {
+                setQuery(e.target.value);
+              }}
+            ></input>
+            <button className="searchbtn">GO</button>
           </Column>
           <Column>
             <Heading>
