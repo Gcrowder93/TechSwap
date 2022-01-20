@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import EditUserComp from '../../components/Users/EditUserComp';
 import { editUserDetails, getUserById } from '../../services/users';
 
 export default function EditUserView({ currentUser }) {
-  // const [input, setInput] = useState({ userName: '', slackUser: '', linkedinUrl: '' });
   const [user, setUser] = useState({ name: '', slack_id: '', linkedin_url: '' });
   const [alert, setAlert] = useState('');
   const history = useHistory();
@@ -29,19 +27,16 @@ export default function EditUserView({ currentUser }) {
     e.preventDefault();
 
     try {
-      const resp = await editUserDetails(user.id, {
-        userName: user.name,
-        slackUser: user.slack_id,
-        linkedinUrl: user.linkedin_url,
+      await editUserDetails(user.id, {
+        name: user.name,
+        slack_id: user.slack_id,
+        linkedin_url: user.linkedin_url,
       });
       history.push(`/profile/${user.id}`);
-      setUser(resp);
-    } catch (e) {
-      setAlert(e.message ? e.message : 'WRONG');
+    } catch (err) {
+      setAlert(err.message ? err.message : 'WRONG');
     }
   };
-
-  console.log(user);
 
   if (loading) return <h1>LOADING</h1>;
 
@@ -51,13 +46,12 @@ export default function EditUserView({ currentUser }) {
       <p>{alert}</p>
       <EditUserComp
         label="Edit User Info"
-        userName={user.name}
-        slackUser={user.slack_id}
-        linkedinUrl={user.linkedin_url}
+        name={user.name}
+        slack_id={user.slack_id}
+        linkedin_url={user.linkedin_url}
         onChange={onChange}
         onSubmit={onSubmit}
       />
-      <button onClick={onSubmit}>Submit</button>
     </div>
   );
 }

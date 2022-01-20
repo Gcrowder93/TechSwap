@@ -38,15 +38,15 @@ export async function signUpUserDetails(user_id, email, usersName, slackUser, li
   return userDetail;
 }
 
-export async function editUserDetails(id, { userName, slackUser, linkedinUrl }) {
-  const { userDetail, error } = await client
+export async function editUserDetails(id, { name, slack_id, linkedin_url }) {
+  const { data, error } = await client
     .from('users')
-    .update({ userName, slackUser, linkedinUrl })
+    .update({ name, slack_id, linkedin_url })
     .match({ id });
   if (error) {
     throw error;
   }
-  return userDetail;
+  return data;
 }
 
 export async function signInUser(email, password) {
