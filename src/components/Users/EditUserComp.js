@@ -1,32 +1,33 @@
 import React from 'react';
 
-export default function EditUserComp({
-  label,
-  userName,
-  slackUser,
-  linkedinUrl,
-  onChange,
-  onSubmit,
-}) {
+export default function EditUserComp({ label, name, onChange, slack_id, linkedin_url, onSubmit }) {
+  console.log('EditUserComp', name);
   return (
     <div>
       <div>EDIT</div>
       <div>{label || 'User Info'}</div>
-      <form onSubmit={onSubmit}>
-        <label htmlFor="userName">Name: </label>
-        <input id="userName" name="userName" type="text" value={userName} onChange={onChange} />
+      <form onSubmit={(e) => onSubmit(e)}>
+        <label htmlFor="name">Name: </label>
+        <input id="name" name="name" type="text" value={name} onChange={(e) => onChange(e)} />
         <br />
-        <label htmlFor="slackUser">Slack: </label>
-        <input id="slackUser" name="slackUser" type="text" value={slackUser} onChange={onChange} />
-        <br />
-        <label htmlFor="linkedinUrl">LinkedIn: </label>
+        <label htmlFor="slack_id">Slack: </label>
         <input
-          id="linkedinUrl"
-          name="linkedinUrl"
+          id="slack_id"
+          name="slack_id"
           type="text"
-          value={linkedinUrl}
-          onChange={onChange}
+          value={slack_id}
+          onChange={(e) => onChange(e)}
         />
+        <br />
+        <label htmlFor="linkedin_url">LinkedIn: </label>
+        <input
+          id="linkedin_url"
+          name="linkedin_url"
+          type="text"
+          value={linkedin_url}
+          onChange={(e) => onChange(e)}
+        />
+        <button>Submit</button>
       </form>
     </div>
   );
