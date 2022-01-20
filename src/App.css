@@ -33,6 +33,11 @@ body {
   margin-right: 40px;
 }
 
+.techlogo {
+  width: 150px;
+  height: 150px;
+}
+
 .addlogo {
   height: 30px;
   width: 35px;
