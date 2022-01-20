@@ -8,13 +8,13 @@ const Header = () => {
   const [currentUser, setCurrentUser] = useState(getUser());
   const [user, setUser] = useState({});
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const resp = await getUserById(currentUser.user.id);
-      setUser(resp);
-    };
-    fetchData();
-  }, [currentUser]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const resp = await getUserById(currentUser.user.id);
+  //     setUser(resp);
+  //   };
+  //   fetchData();
+  // }, [currentUser]);
 
   const logoutUser = async () => {
     await logout();

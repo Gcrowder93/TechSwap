@@ -1,4 +1,5 @@
 import { client, checkError } from './client';
+import { getUserById } from './users';
 
 export async function fetchProducts() {
   const resp = await client.from('products').select('*');
@@ -32,6 +33,12 @@ export async function createProduct({ title, description, price, categories, con
 
 export async function getProductById(id) {
   const resp = await client.from('products').select('*').match({ id }).single();
+  return checkError(resp);
+}
+
+export async function getProductUserId(id) {
+  console.log(id);
+  const resp = await client.from('products').select('id').match({ user_id: id }).single();
   return checkError(resp);
 }
 
