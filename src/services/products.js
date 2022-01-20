@@ -16,7 +16,15 @@ export async function fetchProducts() {
 //   });
 //   return checkError(resp);
 // }
-export async function createProduct({ file, title, description, price, categories, condition }) {
+export async function createProduct({
+  user_id,
+  file,
+  title,
+  description,
+  price,
+  categories,
+  condition,
+}) {
   await client.storage.from('product-image').upload(`public/${file.name}`, file, { upsert: true });
 
   const { publicURL } = await client.storage
@@ -24,6 +32,7 @@ export async function createProduct({ file, title, description, price, categorie
     .getPublicUrl(`public/${file.name}`);
 
   const resp = await client.from('products').insert({
+    user_id: user_id,
     title: title,
     description: description,
     price: price,
