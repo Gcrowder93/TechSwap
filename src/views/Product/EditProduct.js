@@ -22,7 +22,6 @@ export default function EditProduct() {
   const history = useHistory();
   const [alert, setAlert] = useState('');
   const { id } = useParams();
-  const [productToDelete, setProductToDelete] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -63,6 +62,7 @@ export default function EditProduct() {
       const resp = await updateProductById(product.id, {
         title: product.title,
         description: product.description,
+        price: product.price,
         file: product.file,
         category: product.category,
         condition: product.condition,
@@ -88,8 +88,6 @@ export default function EditProduct() {
         setProduct={setProduct}
         onStateChange={onStateChange}
         onSubmit={onSubmit}
-        productToDelete={productToDelete}
-        setProductToDelete={setProductToDelete}
         handleDelete={handleDelete}
         id={id}
       />

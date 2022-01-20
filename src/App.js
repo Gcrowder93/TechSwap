@@ -97,7 +97,7 @@ function App() {
             {/* Edit Product */}
 
             <Route exact path="/products/:id/edit" currentUser={currentUser}>
-              <EditProduct />
+              <EditProduct currentUser={currentUser} />
             </Route>
           </Switch>
         </BrowserRouter>

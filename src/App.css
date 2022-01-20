@@ -172,7 +172,7 @@ body {
 
 .aboutus h2 {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .pfp p {
@@ -189,8 +189,4 @@ body {
   border-radius: 50%;
   max-width: 10%;
   margin-top: 3%;
-}
-
-.footer-fixed {
-  position: fixed;
 }
