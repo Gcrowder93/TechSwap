@@ -4,22 +4,23 @@ import { Box, Container, Row, Column, HeaderLink, Heading } from './HeaderStyles
 import { getUser, getUserById, logout } from '../../services/users';
 import { useState } from 'react';
 import { Redirect } from 'react-router-dom';
+import Auth from '../Auth/Auth';
 
 const Header = () => {
   const [currentUser, setCurrentUser] = useState(getUser());
   const [user, setUser] = useState({});
 
-  // useEffect(() => {
-  //   if (!currentUser) {
-  //     <Redirect to="/sign-in" />;
-  //   } else {
-  //     const fetchData = async () => {
-  //       const resp = await getUserById(currentUser.user.id);
-  //       setUser(resp);
-  //     };
-  //     fetchData();
-  //   }
-  // }, [currentUser]);
+  useEffect(() => {
+    if (currentUser === null) {
+      <Auth setCurrentUser={setCurrentUser} />;
+    } else {
+      const fetchData = async () => {
+        const resp = await getUserById(currentUser.user.id);
+        setUser(resp);
+      };
+      fetchData();
+    }
+  }, [currentUser]);
 
   const logoutUser = async () => {
     await logout();
