@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import EditUser from '../../views/User/EditUser';
-// import { fetchUsers } from '../../services/users';
 
 export default function Users({ user }) {
   return (

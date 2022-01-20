@@ -3,12 +3,14 @@ import '../../App.css';
 import { Box, Container, Row, Column, HeaderLink, Heading } from './HeaderStyles';
 import { getUser, getUserById, logout } from '../../services/users';
 import { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
+import Autocomplete from '../../AutoComplete';
 import Auth from '../Auth/Auth';
 
 const Header = () => {
   const [currentUser, setCurrentUser] = useState(getUser());
   const [user, setUser] = useState({});
+  const [products, getProductbyId] = useState();
 
   useEffect(() => {
     if (currentUser === null) {
@@ -70,6 +72,13 @@ const Header = () => {
                 !!
               </HeaderLink> */}
             <input className="searchbar" placeholder="Search"></input>
+            {/* <br></br> */}
+            {/* <br></br> */}
+            {/* <section>
+              <div className="searchbarsearch">
+                <Autocomplete getProductbyId={products} />
+              </div>
+            </section> */}
             {/* <button className="searchbtn">GO</button> */}
           </Column>
           <Column>

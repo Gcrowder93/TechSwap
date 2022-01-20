@@ -8,10 +8,10 @@ export default function AddProduct() {
   const [title, setTitle] = useState([]);
   const [description, setDescription] = useState([]);
   const [price, setPrice] = useState(0);
-  const [image, setImage] = useState([]);
   const [categories, setCategories] = useState([]);
   const [condition, setCondition] = useState([]);
   const [alert, setAlert] = useState([]);
+  const [file, setFile] = useState(null);
   const history = useHistory();
 
   const onChange = ({ target }) => {
@@ -23,12 +23,12 @@ export default function AddProduct() {
         return setDescription(target.value);
       case 'price':
         return setPrice(target.value);
-      case 'image':
-        return setImage(target.value);
       case 'categories':
         return setCategories(target.value);
       case 'condition':
         return setCondition(target.value);
+      case 'file':
+        return setFile(target.files[0]);
       default:
         return false;
     }
@@ -58,7 +58,14 @@ export default function AddProduct() {
     e.preventDefault();
     console.log(categories);
     try {
-      const resp = await createProduct({ title, description, price, image, categories, condition });
+      const resp = await createProduct({
+        file,
+        title,
+        description,
+        price,
+        categories,
+        condition,
+      });
       console.log(resp);
       history.push(`/products/${resp[0].id}`);
     } catch (error) {
@@ -75,7 +82,6 @@ export default function AddProduct() {
         {...title}
         {...description}
         {...price}
-        {...image}
         {...categories}
         {...condition}
         onSubmit={onSubmit}

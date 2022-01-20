@@ -7,6 +7,8 @@ import {
   fetchProducts,
 } from '../../services/products';
 import EditProductComp from '../../components/Products/EditProductComp';
+import { getUserById } from '../../services/users';
+import { client } from '../../services/client';
 
 export default function EditProduct() {
   const [product, setProduct] = useState({
@@ -21,22 +23,21 @@ export default function EditProduct() {
   const [alert, setAlert] = useState('');
   const { id } = useParams();
   const [productToDelete, setProductToDelete] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const resp = await getProductById(id);
-      setProduct(resp);
+      const user = await getUserById(client.auth.session().user.id);
+      setLoading(false);
+      if (user.id !== resp.user_id) {
+        history.push(`/products/${resp.id}`);
+      } else {
+        setProduct(resp);
+      }
     };
     fetchData();
-  }, [id]);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const resp = await deleteProduct(id);
-  //     setProductToDelete(resp);
-  //   };
-  //   fetchData();
-  // }, []);
+  }, [id, history]);
 
   const handleDelete = async (productId) => {
     const shouldDelete = confirm('Are you sure you want to delete this product');
@@ -67,6 +68,8 @@ export default function EditProduct() {
       setAlert(e.message ? e.message : 'Something went wrong:');
     }
   };
+
+  if (loading) return <h1>Finding your Product!</h1>;
 
   return (
     <>

@@ -12,3 +12,28 @@ export default function ProtectedRoute({ currentUser, path, children, ...rest })
     </div>
   );
 }
+
+export function ProtectedAuthRoute({
+  currentUser,
+  currentProduct,
+  userId,
+  path,
+  children,
+  ...rest
+}) {
+  console.log('CURRENT USER', currentUser);
+  console.log('CURRENT PRODUCT', currentProduct);
+  console.log('CURRENT userID', userId);
+  return (
+    <div>
+      <Route
+        path={path}
+        {...rest}
+        render={() =>
+          currentUser === currentProduct ? { ...children } : <Redirect to="/sign-in" />
+        }
+      />
+    </div>
+  );
+}
+// const user = getUserById(currentUser.id);
