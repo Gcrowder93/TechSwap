@@ -55,6 +55,10 @@ body {
   margin-top: -3px;
 }
 
+.productsearch {
+  width: 100px;
+}
+
 .categoriesbtn {
   width: 30px;
   height: 30px;
