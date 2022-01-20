@@ -1,16 +1,13 @@
 import React from 'react';
-import DeleteProduct from '../../views/Product/DeleteProduct';
 
 export default function EditProductComp({
   title,
   description,
   price,
-  file,
   categories,
   condition,
   onStateChange,
   onSubmit,
-  productToDelete,
   handleDelete,
   id,
 }) {
