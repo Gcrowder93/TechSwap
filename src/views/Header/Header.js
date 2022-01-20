@@ -43,10 +43,15 @@ const Header = () => {
               </button> */}
             </Heading>
           </Column>
-          <Column>
+          {/* <Column>
             <Heading>
               <HeaderLink href="/aboutus">About Us</HeaderLink>
             </Heading>
+          </Column> */}
+          <Column>
+            <button className="logoutbtn" onClick={logoutUser}>
+              Log Out
+            </button>
           </Column>
           <Column>
             <Heading>
@@ -59,20 +64,23 @@ const Header = () => {
             </Heading>
           </Column>
           <Column>
-            <Heading>
-              {/* <HeaderLink href="#">
+            {/* <HeaderLink href="#">
                 <input placeholder="Search"></input>
                 <button className="searchbtn">Search</button>
                 !!
               </HeaderLink> */}
-              <input className="searchbar" placeholder="Search"></input>
-              <button className="searchbtn">GO</button>
-            </Heading>
+            <input className="searchbar" placeholder="Search"></input>
+            {/* <button className="searchbtn">GO</button> */}
           </Column>
           <Column>
-            <button className="logoutbtn" onClick={logoutUser}>
-              Log Out
-            </button>
+            <Heading>
+              <HeaderLink href="/categories">
+                <img
+                  src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/list-icon-18-256.png"
+                  className="categoriesbtn"
+                ></img>
+              </HeaderLink>
+            </Heading>
           </Column>
         </Row>
       </Container>

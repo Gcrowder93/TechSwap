@@ -18,12 +18,13 @@ body {
 }
 .logo {
   width: 90px;
-  margin-left: -60px;
+  margin-left: -30px;
 }
 
 .profilepic {
   height: 30px;
   width: 35px;
+  margin-right: 5px;
 }
 
 .homelogo {
@@ -35,10 +36,12 @@ body {
 .addlogo {
   height: 30px;
   width: 35px;
+  margin-right: 5px;
 }
 
 .aboutfoot {
-  margin-top: -6px;
+  margin-top: -5px;
+  margin-left: 4px;
 }
 
 .searchbar {
