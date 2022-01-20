@@ -71,14 +71,14 @@ const Header = () => {
                 <button className="searchbtn">Search</button>
                 !!
               </HeaderLink> */}
-            {/* <input className="searchbar" placeholder="Search"></input> */}
+            <input className="searchbar" placeholder="Search"></input>
             {/* <br></br> */}
             {/* <br></br> */}
-            <section>
+            {/* <section>
               <div className="searchbarsearch">
                 <Autocomplete getProductbyId={products} />
               </div>
-            </section>
+            </section> */}
             {/* <button className="searchbtn">GO</button> */}
           </Column>
           <Column>
