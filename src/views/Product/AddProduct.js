@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import ProductForm from '../../components/Products/ProductForm';
 import { createProduct } from '../../services/products';
+import { getUser, getUserById } from '../../services/users';
 
 export default function AddProduct() {
   const [title, setTitle] = useState([]);
@@ -12,6 +13,7 @@ export default function AddProduct() {
   const [condition, setCondition] = useState([]);
   const [alert, setAlert] = useState([]);
   const [file, setFile] = useState(null);
+  const [userId, setUserId] = useState({});
   const history = useHistory();
 
   const onChange = ({ target }) => {
@@ -34,6 +36,19 @@ export default function AddProduct() {
     }
   };
 
+  const user = getUser();
+  console.log(user);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const resp = await getUserById(user.user.id);
+      setUserId(resp);
+    };
+    fetchUser();
+  }, [user.user.id]);
+  console.log(userId);
+
+  const user_id = userId.id;
   // const updateProductState = (key, value) => {
   //   title[key] = value;
   //   setTitle({ ...title });
@@ -59,6 +74,7 @@ export default function AddProduct() {
     console.log(categories);
     try {
       const resp = await createProduct({
+        user_id,
         file,
         title,
         description,
