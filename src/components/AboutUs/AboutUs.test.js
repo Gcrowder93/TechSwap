@@ -1,5 +1,5 @@
 import AboutUs from './AboutUs';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
 test('Should Render James', async () => {
