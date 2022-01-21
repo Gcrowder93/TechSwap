@@ -36,7 +36,7 @@ export default function Auth({ setCurrentUser }) {
           onClick={() => {
             setType('Sign In');
           }}
-          className={classnames({ active: type === 'Sign In' })}
+          className={classnames({ active: type === 'Sign In' }, 'signInHeader')}
         >
           Sign In
         </h1>
@@ -44,7 +44,7 @@ export default function Auth({ setCurrentUser }) {
           onClick={() => {
             setType('Sign Up');
           }}
-          className={classnames({ active: type === 'Sign Up' })}
+          className={classnames({ active: type === 'Sign Up' }, 'signUpHeader')}
         >
           Sign Up
         </h1>
