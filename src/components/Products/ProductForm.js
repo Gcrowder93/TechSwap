@@ -8,7 +8,6 @@ export default function ProductForm({
   condition,
   onSubmit,
   onChange,
-  //   updateProductState,
 }) {
   return (
     <form onSubmit={onSubmit}>

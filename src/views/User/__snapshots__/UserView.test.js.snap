@@ -3,10 +3,6 @@
 exports[`UserView should do something 1`] = `
 <div>
   <div>
-    User Profile View
-  </div>
-  <br />
-  <div>
     <h1>
       Profile
     </h1>

@@ -51,6 +51,7 @@ export const FooterLink = styled.a`
     color: royalBlue;
     transition: 200ms ease-in;
   }
+  font-size: 90%;
 `;
 
 export const Heading = styled.p`

@@ -25,8 +25,6 @@ export default function UserView({ currentUser, setCurrentUser }) {
     <h1>LOADING</h1>
   ) : (
     <>
-      <div>User Profile View</div>
-      <br></br>
       <Users user={user} />
       <Link to={`/profile/${user.id}/edit`}>Edit</Link>
     </>

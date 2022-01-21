@@ -1,27 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import '../../App.css';
 import { Box, Container, Row, Column, HeaderLink, Heading } from './HeaderStyles';
-import { getUser, getUserById, logout } from '../../services/users';
+import { getUser, logout } from '../../services/users';
 import { useState } from 'react';
-import Auth from '../Auth/Auth';
 
 const Header = () => {
   const [currentUser, setCurrentUser] = useState(getUser());
-  const [user, setUser] = useState({});
-  // const [products, setProducts] = useState('');
   const [query, setQuery] = useState('');
-
-  useEffect(() => {
-    if (currentUser === null) {
-      <Auth setCurrentUser={setCurrentUser} />;
-    } else {
-      const fetchData = async () => {
-        const resp = await getUserById(currentUser.user.id);
-        setUser(resp);
-      };
-      fetchData();
-    }
-  }, [currentUser]);
 
   const logoutUser = async () => {
     await logout();
@@ -47,27 +32,11 @@ const Header = () => {
             </button>
           </Column>
           <Column>
-            <Heading>
-              <HeaderLink href={`/profile/${user.id}`}>
-                <img
-                  src="https://icon-library.com/images/profile-icon-white/profile-icon-white-1.jpg"
-                  className="profilepic"
-                ></img>
-              </HeaderLink>
-            </Heading>
-          </Column>
-          <Column>
-            {/* <HeaderLink href="#">
-              <input placeholder="Search"></input>
-              <button className="searchbtn">Search</button>
-            </HeaderLink> */}
-
             <input
               type="text"
               className="searchbar"
               value={query}
               placeholder="Search"
-              // onChange={setProducts}
               onChange={(e) => {
                 setQuery(e.target.value);
               }}

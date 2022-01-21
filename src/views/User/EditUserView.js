@@ -42,7 +42,6 @@ export default function EditUserView({ currentUser }) {
 
   return (
     <div>
-      <div>Edit</div>
       <p>{alert}</p>
       <EditUserComp
         label="Edit User Info"

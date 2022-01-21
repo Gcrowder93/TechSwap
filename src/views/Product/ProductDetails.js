@@ -7,7 +7,6 @@ import { getUserById } from '../../services/users';
 import { client } from '../../services/client';
 
 export default function ProductDetails() {
-  // const { id } = useParams();
   const params = useParams();
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -19,10 +18,8 @@ export default function ProductDetails() {
       const user = await getUserById(client.auth.session().user.id);
       setProduct(data);
       setCurrentUser(user);
-      console.log(user);
       setLoading(false);
     };
-    // getProductById(id).then(({ data }) => setProduct(data));
     fetchData();
   }, [params.id]);
   if (loading) {
@@ -42,12 +39,4 @@ export default function ProductDetails() {
       </div>
     </div>
   );
-}
-
-{
-  /* <h1>{product.title}</h1>
-<img src={product.image} />
-<h3>{product.price}</h3>
-<h3>{product.condition}</h3>
-<p>{product.description}</p> */
 }
