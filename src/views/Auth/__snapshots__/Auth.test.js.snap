@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Auth.js does some stuff 1`] = `
+<div>
+  <div
+    class="Link"
+  >
+    <br />
+    <br />
+    <div
+      classnames="Link"
+    >
+      <h1
+        class="active signInHeader"
+      >
+        Sign In
+      </h1>
+      <h1
+        class="signUpHeader"
+      >
+        Sign Up
+      </h1>
+    </div>
+    <p>
+       
+      Sign In
+       
+    </p>
+    <form
+      class="form"
+    >
+      <h3 />
+      <div
+        class="form-controls"
+      >
+        <label>
+          Email:
+        </label>
+        <input
+          placeholder="Enter Valid Email Address"
+          type="email"
+          value=""
+        />
+      </div>
+      <div
+        class="form-controls"
+      >
+        <label>
+          Password:
+        </label>
+        <input
+          placeholder="Minimum 6 digits req."
+          type="password"
+          value=""
+        />
+      </div>
+      <input
+        class="submit"
+        type="submit"
+      />
+    </form>
+  </div>
+</div>
+`;
