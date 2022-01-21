@@ -18,7 +18,7 @@ exports[`Footer.js should do something 1`] = `
             class="sc-jRQBWg gaAreP"
           >
             <a
-              class="sc-eCImPb gIwJfE"
+              class="sc-eCImPb ftRhrk"
               href="/"
             >
               <img
@@ -35,9 +35,8 @@ exports[`Footer.js should do something 1`] = `
             class="sc-jRQBWg gaAreP"
           >
             <a
-              class="sc-eCImPb gIwJfE"
-              href="https://alchemycodelab.slack.com
-"
+              class="sc-eCImPb ftRhrk"
+              href="https://alchemycodelab.slack.com"
             >
               <img
                 class="logo"
@@ -53,7 +52,7 @@ exports[`Footer.js should do something 1`] = `
             class="sc-jRQBWg gaAreP"
           >
             <a
-              class="sc-eCImPb gIwJfE"
+              class="sc-eCImPb ftRhrk"
               href="/add"
             >
               <img
@@ -67,7 +66,7 @@ exports[`Footer.js should do something 1`] = `
           class="sc-dkPtRN auSoR"
         >
           <a
-            class="sc-eCImPb gIwJfE aboutfoot"
+            class="sc-eCImPb ftRhrk aboutfoot"
             href="/aboutus"
           >
             About Us
@@ -80,7 +79,7 @@ exports[`Footer.js should do something 1`] = `
             class="sc-jRQBWg gaAreP"
           >
             <a
-              class="sc-eCImPb gIwJfE"
+              class="sc-eCImPb ftRhrk"
               href="/profile/:id"
             >
               <img
