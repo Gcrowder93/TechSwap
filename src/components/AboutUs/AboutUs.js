@@ -6,17 +6,11 @@ import mark from './PFPs/mark.png';
 import chase from './PFPs/chase.png';
 import brett from './PFPs/brett.png';
 import linkedin from './PFPs/linkedin.png';
+import './AboutUs.css';
 
 export default function AboutUs() {
   return (
     <div className="aboutus">
-      {/* <br></br>
-      <br></br>
-      <section>
-        <div className="searchbarsearch">
-          <Autocomplete Products={ProductsCard} />
-        </div>
-      </section> */}
       <br></br>
       <h1>About the Creators</h1>
       <br></br>

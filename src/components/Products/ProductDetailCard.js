@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function ProductDetailCard({ product }) {
+export default function ProductDetailCard({ product, onClick }) {
   return (
     <div className="productDetailCard">
       <h1 className="productDetailTitle">{product.title}</h1>
@@ -13,6 +13,7 @@ export default function ProductDetailCard({ product }) {
         <Link to={`/products/${product.id}/edit`} className="editButton">
           <button> Edit Product</button>{' '}
         </Link>
+        <button onClick={onClick}>Send E-Mail</button>
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ import {
 import EditProductComp from '../../components/Products/EditProductComp';
 import { getUserById } from '../../services/users';
 import { client } from '../../services/client';
+import './AddEdit.css';
 
 export default function EditProduct() {
   const [product, setProduct] = useState({

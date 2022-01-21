@@ -8,8 +8,7 @@ import ProductsCard from './components/Products/ProductsCard';
 import ProductPage from './views/Product/ProductPage';
 import ProductDetails from './views/Product/ProductDetails';
 import AddProduct from './views/Product/AddProduct';
-// import EditProduct from './views/Product/EditProduct';
-// import EditUser from './views/User/EditUser';
+
 import AboutUs from './components/AboutUs/AboutUs';
 import Footer from './views/Footer/Footer';
 import Categories from './views/Product/Categories';
@@ -32,7 +31,7 @@ function App() {
   return (
     <div className="App">
       <div className="background">
-        <button onClick={logoutUser}>Log Out</button>
+        {/* <button onClick={logoutUser}>Log Out</button> */}
         <br></br>
         {/* <br></br>
         <br></br>
