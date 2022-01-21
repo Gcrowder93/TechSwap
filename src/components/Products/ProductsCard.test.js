@@ -1,8 +1,8 @@
 import ProductCard from './ProductsCard';
-import { render, screen } from 'react-dom';
-import { MemoryRouter } from 'react-router-dom/cjs/react-router-dom.min';
+import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 
-test.skip('Should render Product Card', async () => {
+test('Should render Product Card', async () => {
   const { container } = render(
     <MemoryRouter>
       <ProductCard
@@ -24,6 +24,6 @@ test.skip('Should render Product Card', async () => {
       />
     </MemoryRouter>
   );
-  await screen.findByText('Condition:');
+  await screen.findByText('Standing Desk');
   expect(container).toMatchSnapshot();
 });
