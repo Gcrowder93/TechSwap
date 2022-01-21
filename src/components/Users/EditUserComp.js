@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function EditUserComp({ label, name, onChange, slack_id, linkedin_url, onSubmit }) {
-  console.log('EditUserComp', name);
   return (
     <div>
       <div>EDIT</div>
