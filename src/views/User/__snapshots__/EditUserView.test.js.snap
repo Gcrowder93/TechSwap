@@ -3,9 +3,6 @@
 exports[`EditUserView.js should do something 1`] = `
 <div>
   <div>
-    <div>
-      Edit
-    </div>
     <p />
     <div>
       <div>

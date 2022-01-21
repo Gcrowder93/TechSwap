@@ -40,23 +40,6 @@ exports[`Footer.js should do something 1`] = `
         <div
           class="sc-dkPtRN auSoR"
         >
-          <p
-            class="sc-jRQBWg iiYqJV"
-          >
-            <a
-              class="sc-eCImPb gIwJfE"
-              href="/profile/undefined"
-            >
-              <img
-                class="profilepic"
-                src="https://icon-library.com/images/profile-icon-white/profile-icon-white-1.jpg"
-              />
-            </a>
-          </p>
-        </div>
-        <div
-          class="sc-dkPtRN auSoR"
-        >
           <input
             class="searchbar"
             placeholder="Search"
