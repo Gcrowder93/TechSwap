@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditUserView.js should do something 1`] = `
+<div>
+  <div>
+    <div>
+      Edit
+    </div>
+    <p />
+    <div>
+      <div>
+        EDIT
+      </div>
+      <div>
+        Edit User Info
+      </div>
+      <form>
+        <label
+          for="name"
+        >
+          Name: 
+        </label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          value="rewqrewq"
+        />
+        <br />
+        <label
+          for="slack_id"
+        >
+          Slack: 
+        </label>
+        <input
+          id="slack_id"
+          name="slack_id"
+          type="text"
+          value="rewqrewq"
+        />
+        <br />
+        <label
+          for="linkedin_url"
+        >
+          LinkedIn: 
+        </label>
+        <input
+          id="linkedin_url"
+          name="linkedin_url"
+          type="text"
+          value="rewqrewq"
+        />
+        <button>
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;
