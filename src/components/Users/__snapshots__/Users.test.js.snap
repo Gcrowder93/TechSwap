@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render users profile page 1`] = `
+<div>
+  <div>
+    <h1>
+      Profile
+    </h1>
+    <div>
+      Name: 
+      rewqrewq
+    </div>
+    <div>
+      Email: 
+      rewq@ewq.vfdsa
+    </div>
+    <div>
+      LinkedIn: 
+      rewqrewq
+    </div>
+    <div>
+      Slack: 
+      rewqrewq
+    </div>
+  </div>
+</div>
+`;

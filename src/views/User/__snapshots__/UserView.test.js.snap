@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserView should do something 1`] = `
+<div>
+  <div>
+    User Profile View
+  </div>
+  <br />
+  <div>
+    <h1>
+      Profile
+    </h1>
+    <div>
+      Name: 
+      rewqrewq
+    </div>
+    <div>
+      Email: 
+      rewq@ewq.vfdsa
+    </div>
+    <div>
+      LinkedIn: 
+      rewqrewq
+    </div>
+    <div>
+      Slack: 
+      rewqrewq
+    </div>
+  </div>
+  <a
+    href="/profile/26/edit"
+  >
+    Edit
+  </a>
+</div>
+`;

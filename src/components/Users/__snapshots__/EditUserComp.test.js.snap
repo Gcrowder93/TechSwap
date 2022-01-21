@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Edit User Component 1`] = `
+<div>
+  <div>
+    <h1>
+      Profile
+    </h1>
+    <div>
+      Name: 
+      rewqrewq
+    </div>
+    <div>
+      Email: 
+    </div>
+    <div>
+      LinkedIn: 
+      rewqrewq
+    </div>
+    <div>
+      Slack: 
+      rewqrewq
+    </div>
+  </div>
+</div>
+`;
