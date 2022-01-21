@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="App">
       <div className="background">
-        <button onClick={logoutUser}>Log Out</button>
+        {/* <button onClick={logoutUser}>Log Out</button> */}
         <br></br>
         {/* <br></br>
         <br></br>

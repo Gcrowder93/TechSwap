@@ -67,10 +67,12 @@ export default function EditProductComp({
           onChange={(e) => onStateChange(e)}
         />
 
-        <input type="submit" value="Submit" />
+        <input className="submit" type="submit" value="Submit" />
       </form>
 
-      <button onClick={() => handleDelete(id)}>Delete Product</button>
+      <button className="delete" onClick={() => handleDelete(id)}>
+        Delete
+      </button>
     </div>
   );
 }

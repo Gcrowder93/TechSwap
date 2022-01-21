@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import ProductForm from '../../components/Products/ProductForm';
 import { createProduct } from '../../services/products';
+import './AddEdit.css';
 
 export default function AddProduct() {
   const [title, setTitle] = useState([]);
