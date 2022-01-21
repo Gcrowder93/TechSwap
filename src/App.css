@@ -190,3 +190,11 @@ body {
   max-width: 10%;
   margin-top: 3%;
 }
+
+.signInHeader {
+  color: white;
+}
+
+.signUpHeader {
+  color: white;
+}
