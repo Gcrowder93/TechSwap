@@ -47,7 +47,7 @@ Our Project team members are:
   GitHub: <a href = "https://github.com/BrettSeifried">https://github.com/BrettSeifried</a>
   <br>
 
-Our Project Planning and Miro board can be found at:
+Our core project planning was done on Miro board and you can view our planning:
 <br>
 <a href="https://miro.com/app/board/uXjVOVz100E=/?invite_link_id=488416118707"> Miro Board </a>
 <br>
