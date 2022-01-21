@@ -5,17 +5,6 @@ export async function fetchProducts() {
   return checkError(resp);
 }
 
-// export async function createProduct(item) {
-//   const resp = await client.from('products').insert({
-//     title: item.title,
-//     description: item.description,
-//     price: item.price,
-//     image: item.image,
-//     category: item.category,
-//     condition: item.condition,
-//   });
-//   return checkError(resp);
-// }
 export async function createProduct({
   user_id,
   file,
@@ -77,8 +66,6 @@ export async function updateProductById(
       .update({ title, description, price, category, condition })
       .match({ id });
   }
-
-  console.log(resp);
 
   return checkError(resp);
 }

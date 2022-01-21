@@ -6,7 +6,6 @@ import { createProduct } from '../../services/products';
 import './AddEdit.css';
 import { getUser, getUserById } from '../../services/users';
 
-
 export default function AddProduct() {
   const [title, setTitle] = useState([]);
   const [description, setDescription] = useState([]);
@@ -19,7 +18,6 @@ export default function AddProduct() {
   const history = useHistory();
 
   const onChange = ({ target }) => {
-    console.log(target.name);
     switch (target.name) {
       case 'title':
         return setTitle(target.value);
@@ -39,7 +37,6 @@ export default function AddProduct() {
   };
 
   const user = getUser();
-  console.log(user);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -48,32 +45,11 @@ export default function AddProduct() {
     };
     fetchUser();
   }, [user.user.id]);
-  console.log(userId);
 
   const user_id = userId.id;
-  // const updateProductState = (key, value) => {
-  //   title[key] = value;
-  //   setTitle({ ...title });
-
-  //   description[key] = value;
-  //   setDescription({ ...description });
-
-  //   price[key] = value;
-  //   setPrice({ ...price });
-
-  //   image[key] = value;
-  //   setImage({ ...image });
-
-  //   categories[key] = value;
-  //   setCategories({ ...categories });
-
-  //   condition[key] = value;
-  //   setCondition({ ...condition });
-  // };
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log(categories);
     try {
       const resp = await createProduct({
         user_id,
@@ -84,7 +60,6 @@ export default function AddProduct() {
         categories,
         condition,
       });
-      console.log(resp);
       history.push(`/products/${resp[0].id}`);
     } catch (error) {
       setAlert(error.message);
@@ -103,7 +78,6 @@ export default function AddProduct() {
         {...categories}
         {...condition}
         onSubmit={onSubmit}
-        // updateProductState={updateProductState}
         onChange={onChange}
       />
     </div>

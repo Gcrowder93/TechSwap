@@ -40,16 +40,16 @@ export default function AuthReg({
         <input
           placeholder="Name"
           type="text"
-          value={usersName} // up for change
+          value={usersName}
           onChange={(e) => setUsersName(e.target.value)}
         />
       </div>
       <div className="form-controls">
         <label>Slack:</label>
         <input
-          placeholder="Slack User ID" //pop up to show where/how to find user ID?
+          placeholder="Slack User ID" 
           type="text"
-          value={slackUser} // up for change
+          value={slackUser} 
           onChange={(e) => setSlack(e.target.value)}
         />
       </div>
@@ -58,7 +58,7 @@ export default function AuthReg({
         <input
           placeholder="LinkedIn URL"
           type="text"
-          value={linkedinUrl} //up for change try to match with name, and slack field
+          value={linkedinUrl}
           onChange={(e) => setLinkedinUrl(e.target.value)}
         />
       </div>

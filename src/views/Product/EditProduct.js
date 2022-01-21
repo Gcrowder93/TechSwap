@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import {
-  getProductById,
-  updateProductById,
-  deleteProduct,
-  fetchProducts,
-} from '../../services/products';
+import { getProductById, updateProductById, deleteProduct } from '../../services/products';
 import EditProductComp from '../../components/Products/EditProductComp';
 import { getUserById } from '../../services/users';
 import { client } from '../../services/client';
