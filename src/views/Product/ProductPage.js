@@ -16,8 +16,6 @@ export default function ProductPage() {
 
   return (
     <div>
-      <br></br>
-      <header>.</header>
       <ProductsCard products={products} />
     </div>
   );

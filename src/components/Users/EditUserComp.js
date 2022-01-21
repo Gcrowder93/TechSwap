@@ -1,4 +1,5 @@
 import React from 'react';
+import './Users.css';
 
 export default function EditUserComp({ label, name, onChange, slack_id, linkedin_url, onSubmit }) {
   return (
