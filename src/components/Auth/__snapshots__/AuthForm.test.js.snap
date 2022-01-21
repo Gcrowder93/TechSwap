@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Auth Form 1`] = `
+<div>
+  <form
+    class="form"
+  >
+    <h3 />
+    <div
+      class="form-controls"
+    >
+      <label>
+        Email:
+      </label>
+      <input
+        placeholder="Enter Valid Email Address"
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      class="form-controls"
+    >
+      <label>
+        Password:
+      </label>
+      <input
+        placeholder="Minimum 6 digits req."
+        type="password"
+        value=""
+      />
+    </div>
+    <input
+      class="submit"
+      type="submit"
+    />
+  </form>
+</div>
+`;
